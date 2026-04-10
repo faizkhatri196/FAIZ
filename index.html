@@ -116,13 +116,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 64px;display:fl
 
 /* ── PROJECTS ── */
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;}
-.proj-card{background:rgba(0,245,255,.018);border:1px solid rgba(0,245,255,.09);padding:26px;position:relative;overflow:hidden;transition:border-color .3s,transform .35s;cursor:none;}
+.proj-card{background:rgba(0,245,255,.018);border:1px solid rgba(0,245,255,.09);padding:26px;position:relative;overflow:hidden;transition:border-color .3s,transform .35s;cursor:pointer;}
 .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--cyan),var(--mag));transform:scaleX(0);transform-origin:left;transition:transform .45s;}
 .proj-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% -10%,rgba(0,245,255,.06),transparent 65%);opacity:0;transition:opacity .3s;}
 .proj-card:hover{border-color:rgba(0,245,255,.28);transform:translateY(-7px);}
 .proj-card:hover::before{transform:scaleX(1);}
 .proj-card:hover::after{opacity:1;}
 .proj-card:hover .proj-name{color:var(--cyan);}
+/* 🔥 ADD THIS BELOW */
+a, button {
+  cursor: pointer;
+}
+
+.proj-acts a {
+  position: relative;
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+#cur, #ring {
+  pointer-events: none !important;
+}
 
 .proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
 .proj-icon{font-size:1.4rem;}
@@ -295,7 +309,10 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
     <div class="proj-card fu d1">
       <div class="proj-top">
         <span class="proj-icon">👾</span>
-        <div class="proj-acts"><a href="https://github.com/faizkhatri196/my-project" class="proj-link" target="_blank">GitHub</a><a href="https://my-project-32h6kyvto-faiz-khatri.vercel/" class="proj-link">Live ↗</a></div>
+       <div class="proj-acts">
+       <a href="https://github.com/faizkhatri196/my-project" class="proj-link" target="_blank">GitHub</a>
+       <a href="https://my-project-32h6kyvto-faiz-khatri.vercel.app/" class="proj-link" target="_blank">Live ↗</a>
+       </div>
       </div>
       <h3 class="proj-name">Kids_game(TIC-TAC-TOE)</h3>
       <p class="proj-desc">Simple MY Fisrt Project about Front_end using with HTML,CSS AND JAVASCRIPT.</p>
@@ -304,7 +321,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
     <div class="proj-card fu d2">
       <div class="proj-top">
         <span class="proj-icon">🤖</span>
-        <div class="proj-acts"><a href="https://github.com/faizkhatri196/House_price-prediction-" class="proj-link">GitHub</a></div>
+        <div class="proj-acts"><a href="https://github.com/faizkhatri196/House_price-prediction-" class="proj-link" target="_blank">GitHub</a></div>
       </div>
       <h3 class="proj-name">AI House-prediction Model</h3>
       <p class="proj-desc">Real-time give prediction Price of house in base of area .</p>
@@ -322,7 +339,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
     <div class="proj-card fu d4">
       <div class="proj-top">
         <span class="proj-icon">🌡️</span>
-        <div class="proj-acts"><a href="https://github.com/faizkhatri196/wether_app" class="proj-link">GitHub</a></div>
+        <div class="proj-acts"><a href="https://github.com/faizkhatri196/wether_app " class="proj-link" target="_blank">GitHub</a></div>
       </div>
       <h3 class="proj-name">Weather-app</h3>
       <p class="proj-desc">All city's & area waether give present time scenario base.</p>
@@ -352,10 +369,10 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
       <h3 class="contact-head">Let's Build Something.</h3>
       <p class="contact-p">I'm actively seeking internships, freelance gigs, and open-source collaborations. If you have a project in mind — or just want to geek out about tech — hit me up.</p>
       <div class="c-links">
-        <a href="faizkhatri1819@gmail.com" class="c-link"><span class="c-link-icon">✉</span>hello@faizkhatri.dev</a>
-        <a href="https://github.com/faizkhatri196" class="c-link"><span class="c-link-icon">◎</span>github.com/faizkhatri196</a>
-        <a href="www.linkedin.com/in/faiz-khatri-1912ab344" class="c-link"><span class="c-link-icon">▣</span>linkedin.com/in/faizkhatri</a>
-        <a href="https://leetcode.com/u/faizkhatri196/" class="c-link"><span class="c-link-icon">◈</span>Leetcode</a>
+        <a href="faizkhatri1819@gmail.com" class="c-link" target="_blank"><span class="c-link-icon">✉</span>hello@faizkhatri.dev</a>
+        <a href="https://github.com/faizkhatri196" class="c-link" target="_blank"><span class="c-link-icon">◎</span>github.com/faizkhatri196</a>
+        <a href="www.linkedin.com/in/faiz-khatri-1912ab344" class="c-link" target="_blank"><span class="c-link-icon">▣</span>linkedin.com/in/faizkhatri</a>
+        <a href="https://leetcode.com/u/faizkhatri196/" class="c-link" target="_blank"><span class="c-link-icon">◈</span>Leetcode</a>
       </div>
     </div>
     <div class="fu d2">
