@@ -1417,6 +1417,44 @@
   </div>
 
   <script>
+    /* ── AUDIO SOUND EFFECTS ── */
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const audioCtx = new AudioContext();
+
+    document.body.addEventListener('click', () => {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }, { once: true });
+
+    function playHoverSound() {
+      if (audioCtx.state === 'suspended') return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(1000, audioCtx.currentTime + 0.05);
+      gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.1);
+    }
+
+    function playClickSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(250, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.15);
+      gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.15);
+    }
+
     /* ── CURSOR & PARALLAX ── */
     const cur = document.getElementById('cur'), ring = document.getElementById('ring');
     const heroInner = document.querySelector('.hero-inner');
@@ -1442,10 +1480,15 @@
     })();
 
     document.querySelectorAll('a,button,.proj-card,.btn').forEach(el => {
-      el.addEventListener('mouseenter', () => { cur.style.transform = 'scale(2.2)'; cur.style.background = 'var(--mag)'; ring.style.transform = 'scale(1.6)'; ring.style.borderColor = 'var(--mag)'; });
+      el.addEventListener('mouseenter', () => { 
+        cur.style.transform = 'scale(2.2)'; cur.style.background = 'var(--mag)'; ring.style.transform = 'scale(1.6)'; ring.style.borderColor = 'var(--mag)'; 
+        playHoverSound();
+      });
       el.addEventListener('mouseleave', () => { cur.style.transform = 'scale(1)'; cur.style.background = 'var(--cyan)'; ring.style.transform = 'scale(1)'; ring.style.borderColor = 'rgba(0,245,255,.5)'; });
+      el.addEventListener('click', () => {
+        playClickSound();
+      });
     });
-
     /* ── ADVANCED NETWORK BACKGROUND ── */
     const cv = document.getElementById('matrix'), cx = cv.getContext('2d');
     function resize() { cv.width = innerWidth; cv.height = innerHeight; }
