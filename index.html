@@ -1480,8 +1480,8 @@
     })();
 
     document.querySelectorAll('a,button,.proj-card,.btn').forEach(el => {
-      el.addEventListener('mouseenter', () => { 
-        cur.style.transform = 'scale(2.2)'; cur.style.background = 'var(--mag)'; ring.style.transform = 'scale(1.6)'; ring.style.borderColor = 'var(--mag)'; 
+      el.addEventListener('mouseenter', () => {
+        cur.style.transform = 'scale(2.2)'; cur.style.background = 'var(--mag)'; ring.style.transform = 'scale(1.6)'; ring.style.borderColor = 'var(--mag)';
         playHoverSound();
       });
       el.addEventListener('mouseleave', () => { cur.style.transform = 'scale(1)'; cur.style.background = 'var(--cyan)'; ring.style.transform = 'scale(1)'; ring.style.borderColor = 'rgba(0,245,255,.5)'; });
@@ -1640,6 +1640,8 @@
     const tOverlay = document.getElementById('transition-overlay');
     const tCanvas = document.getElementById('transition-matrix');
     const tCtx = tCanvas.getContext('2d');
+    const chars = '01アイウエオカサタナハマヤラワパバダザガ'.split('');
+    const fs = 13;
 
     function resTrans() { tCanvas.width = innerWidth; tCanvas.height = innerHeight; }
     resTrans(); window.addEventListener('resize', resTrans);
