@@ -59,7 +59,7 @@ window.locale_en = {
     "title": "Projects",
     "p1_desc": "An advanced career guidance system leveraging LLMs, RAG, and LangChain to provide intelligent, personalized professional insights.",
     "p2_desc": "Real-time house price predictions based on geographical area.",
-    "p3_desc": "Worldwide tourist guide with detailed, dynamic visual information.",
+    "p3_desc": "Worldwide travel guide with detailed, dynamic visual information.",
     "p4_desc": "An intelligent weather assistant leveraging Agentic AI to analyze real-time scenarios and provide personalized activity recommendations.",
     "p5_desc": "An AI-powered interview copilot model helping students master technical interviews."
   },
