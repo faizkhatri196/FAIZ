@@ -61,7 +61,8 @@ window.locale_en = {
     "p2_desc": "Real-time house price predictions based on geographical area.",
     "p3_desc": "Worldwide travel guide with detailed, dynamic visual information.",
     "p4_desc": "An intelligent weather assistant leveraging Agentic AI to analyze real-time scenarios and provide personalized activity recommendations.",
-    "p5_desc": "An AI-powered interview copilot model helping students master technical interviews."
+    "p5_desc": "An AI-powered interview copilot model helping students master technical interviews.",
+    "p6_desc": "Location intelligence platform for smart city infrastructure management and urban analytics."
   },
   "contact": {
     "title": "Contact",

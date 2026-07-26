@@ -61,7 +61,8 @@ window.locale_es = {
     "p2_desc": "Modelo de predicción de precios de viviendas en tiempo real según el área geográfica.",
     "p3_desc": "Guía de viajes mundial con información visual detallada y dinámica.",
     "p4_desc": "Un asistente meteorológico inteligente que aprovecha la IA Agéntica para analizar escenarios en tiempo real y proporcionar recomendaciones de actividades personalizadas.",
-    "p5_desc": "Un modelo de copiloto de entrevista impulsado por IA para ayudar a estudiantes a dominar entrevistas técnicas."
+    "p5_desc": "Un modelo de copiloto de entrevista impulsado por IA para ayudar a estudiantes a dominar entrevistas técnicas.",
+    "p6_desc": "Plataforma de inteligencia de ubicación para la gestión de infraestructura urbana y análisis de ciudades inteligentes."
   },
   "contact": {
     "title": "Contacto",
