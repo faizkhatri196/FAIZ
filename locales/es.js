@@ -58,7 +58,7 @@ window.locale_es = {
   "projects": {
     "title": "Proyectos",
     "p1_desc": "Un sistema avanzado de orientación profesional que aprovecha LLMs, RAG y LangChain para brindar información profesional inteligente y personalizada.",
-    "p2_desc": "Modelo de predicción de precios de viviendas en tiempo real según el área geográfica.",
+    "p2_desc": "Plataforma de predicción de precios de viviendas con IA de próxima generación con visualización 3D interactiva de bienes raíces y análisis de mercado.",
     "p3_desc": "Guía de viajes mundial con información visual detallada y dinámica.",
     "p4_desc": "Un asistente meteorológico inteligente que aprovecha la IA Agéntica para analizar escenarios en tiempo real y proporcionar recomendaciones de actividades personalizadas.",
     "p5_desc": "Un modelo de copiloto de entrevista impulsado por IA para ayudar a estudiantes a dominar entrevistas técnicas.",
