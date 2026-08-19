@@ -36,7 +36,7 @@ window.locale_es = {
     "title": "Experiencia",
     "sysslan_role": "Desarrollador Full Stack",
     "sysslan_company": "Sysslan IT Solutions",
-    "sysslan_date": "Julio 2026 – Presente",
+    "sysslan_date": "Julio 2026 – Agosto 2026",
     "sysslan_p1": "Trabajar como Desarrollador Full Stack construyendo aplicaciones web de extremo a extremo, cubriendo capas front-end (React.js), back-end (Node.js) y base de datos.",
     "sysslan_p2": "Servir como organizador de eventos para eventos tecnológicos de la empresa, coordinando la planificación, logística y ejecución junto con las responsabilidades de desarrollo.",
     "sysslan_p3": "Liderar el despliegue de aplicaciones web de extremo a extremo, desde el desarrollo y pruebas hasta el lanzamiento a producción, garantizando implementaciones fluidas y confiables.",

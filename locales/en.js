@@ -36,7 +36,7 @@ window.locale_en = {
     "title": "Experience",
     "sysslan_role": "Full Stack Developer",
     "sysslan_company": "Sysslan IT Solutions",
-    "sysslan_date": "July 2026 – Present",
+    "sysslan_date": "July 2026 – Aug 2026",
     "sysslan_p1": "Working as a Full Stack Developer building full-stack web applications end-to-end, covering front-end (React.js), back-end (Node.js), and database layers.",
     "sysslan_p2": "Serving as event organizer for company tech events, coordinating planning, logistics, and execution alongside development responsibilities.",
     "sysslan_p3": "Owning end-to-end deployment of web applications — from development and testing through to production release — ensuring smooth, reliable rollouts.",
