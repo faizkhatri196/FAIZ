@@ -39,7 +39,7 @@ html{
   -webkit-font-smoothing:antialiased;
 }
 body{background:var(--bg);overflow-x:hidden;cursor:none}
-@media(pointer:coarse){body{cursor:auto}}
+@media(hover:none),(pointer:coarse),(max-width:900px){body{cursor:auto!important}}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 ::selection{background:var(--acc);color:var(--bg)}
@@ -53,10 +53,25 @@ img{display:block;max-width:100%}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
-/* ── CURSOR ── */
-#cur{position:fixed;width:7px;height:7px;background:var(--t1);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
-#ring{position:fixed;width:38px;height:38px;border:1px solid rgba(255,255,255,.22);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .18s,height .18s,border-color .18s}
-@media(pointer:coarse){#cur,#ring{display:none!important}}
+/* ── SMOOTH HARDWARE-ACCELERATED CURSOR ── */
+#cur{position:fixed;top:0;left:0;width:7px;height:7px;background:var(--t1);border-radius:50%;pointer-events:none;z-index:9999;will-change:transform;transition:width .15s,height .15s}
+#ring{position:fixed;top:0;left:0;width:38px;height:38px;border:1px solid rgba(255,255,255,.22);border-radius:50%;pointer-events:none;z-index:9998;will-change:transform;transition:width .18s,height .18s,border-color .18s}
+@media(hover:none),(pointer:coarse),(max-width:900px){#cur,#ring{display:none!important}}
+
+/* ── CRT RETRO-CYBER SCREEN OVERLAY (Smooth for Desktop & Mobile) ── */
+.crt-overlay{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9990;
+  background:linear-gradient(rgba(18,16,24,0) 50%, rgba(0,0,0,0.14) 50%), radial-gradient(ellipse at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.35) 100%);
+  background-size:100% 4px, 100% 100%;
+  opacity:.32;
+  mix-blend-mode:overlay;
+}
+@media(max-width:768px){
+  .crt-overlay{opacity:.2;background-size:100% 3px, 100% 100%}
+}
 
 /* ── AMBIENT ── */
 .bg-noise{position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}

@@ -1,40 +1,57 @@
-// FAIZ KHATRI — Ultra-Premium Portfolio Controller v3.0
+// FAIZ KHATRI — Ultra-Premium Portfolio Controller v5.0 (AI Engineer Edition)
 
 (function () {
   'use strict';
 
-  // ── CUSTOM CURSOR ──────────────────────────────────────────────
+  // ── SMOOTH HARDWARE-ACCELERATED LERP CURSOR ────────────────────
   const cur = document.getElementById('cur');
   const ring = document.getElementById('ring');
-  let mx = -200, my = -200;
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse), (max-width: 900px)').matches;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
-    if (ring) { ring.style.left = mx + 'px'; ring.style.top = my + 'px'; }
-  });
+  let mouseX = -200, mouseY = -200;
+  let ringX = -200, ringY = -200;
+  let isHovered = false;
 
-  // Cursor scaling on interactive elements
-  function bindCursorHovers() {
-    document.querySelectorAll('a, button, .chip, .proj-list-item, .info-row, .exp-item, .filter-btn').forEach(el => {
-      if (el._cursorBound) return;
-      el._cursorBound = true;
-      el.addEventListener('mouseenter', () => {
-        if (!ring) return;
-        ring.style.width = '52px';
-        ring.style.height = '52px';
-        ring.style.borderColor = 'rgba(56,189,248,.5)';
+  if (!isTouch && cur && ring) {
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cur.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    }, { passive: true });
+
+    function renderCursor() {
+      // Smooth lerp for ring follower
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Cursor scaling on interactive elements
+    function bindCursorHovers() {
+      document.querySelectorAll('a, button, .proj-feature, .proj-wide, .proj-list-item, .info-row, .exp-item, .filter-btn, .skill-group').forEach(el => {
+        if (el._cursorBound) return;
+        el._cursorBound = true;
+        el.addEventListener('mouseenter', () => {
+          isHovered = true;
+          ring.style.width = '54px';
+          ring.style.height = '54px';
+          ring.style.borderColor = 'rgba(56,189,248,.6)';
+          ring.style.backgroundColor = 'rgba(56,189,248,.04)';
+        });
+        el.addEventListener('mouseleave', () => {
+          isHovered = false;
+          ring.style.width = '38px';
+          ring.style.height = '38px';
+          ring.style.borderColor = 'rgba(255,255,255,.22)';
+          ring.style.backgroundColor = 'transparent';
+        });
       });
-      el.addEventListener('mouseleave', () => {
-        if (!ring) return;
-        ring.style.width = '36px';
-        ring.style.height = '36px';
-        ring.style.borderColor = 'rgba(255,255,255,.25)';
-      });
-    });
+    }
+    bindCursorHovers();
+    new MutationObserver(bindCursorHovers).observe(document.body, { childList: true, subtree: true });
   }
-  bindCursorHovers();
-  new MutationObserver(bindCursorHovers).observe(document.body, { childList: true, subtree: true });
 
   // ── BACKGROUND GRID CANVAS ─────────────────────────────────────
   const canvas = document.getElementById('bg-grid-canvas');
@@ -45,15 +62,13 @@
     function resizeCanvas() {
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
+      drawGrid();
     }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
 
     function drawGrid() {
       if (!ctx) return;
       ctx.clearRect(0, 0, W, H);
-      ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+      ctx.strokeStyle = 'rgba(255,255,255,0.025)';
       ctx.lineWidth = 1;
 
       const step = 80;
@@ -69,17 +84,17 @@
       ctx.stroke();
     }
 
-    drawGrid();
-    window.addEventListener('resize', drawGrid);
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas, { passive: true });
   }
 
-  // ── TYPEWRITER ─────────────────────────────────────────────────
+  // ── AI ENGINEER TYPEWRITER ─────────────────────────────────────
   let words = [
-    'Advanced RAG Systems',
     'Agentic AI Workflows',
-    'LLM Applications',
-    'Full Stack Products',
-    'AWS Bedrock Solutions'
+    'Advanced RAG Systems',
+    'LLM Tool Calling & Graphs',
+    'AWS Bedrock Orchestration',
+    'Autonomous AI Solutions'
   ];
 
   let wi = 0, ci = 0, deleting = false;
@@ -87,59 +102,28 @@
 
   function tick() {
     if (!typedEl) return;
-    const w = words[wi];
+    const w = words[wi] || words[0];
     typedEl.textContent = deleting ? w.slice(0, --ci) : w.slice(0, ++ci);
 
     if (!deleting && ci === w.length) {
       deleting = true;
-      return setTimeout(tick, 2000);
+      return setTimeout(tick, 2200);
     }
     if (deleting && ci === 0) {
       deleting = false;
       wi = (wi + 1) % words.length;
     }
-    setTimeout(tick, deleting ? 30 : 70);
+    setTimeout(tick, deleting ? 30 : 65);
   }
   tick();
 
-  // Allow i18n to update typewriter words
+  // Allow i18n to dynamically update typewriter words
   if (typeof window.onTypewriterWordsUpdate === 'function') {
     window.onTypewriterWordsUpdate(localizedWords => {
       if (Array.isArray(localizedWords) && localizedWords.length) {
         words = localizedWords;
         wi = 0; ci = 0; deleting = false;
       }
-    });
-  }
-
-  // ── DOCK — LANGUAGE SELECTOR ───────────────────────────────────
-  const langBtn = document.getElementById('langBtn');
-  const langMenu = document.getElementById('langMenu');
-  const langCurrent = document.getElementById('langCurrent');
-
-  if (langBtn && langMenu) {
-    langBtn.addEventListener('click', e => {
-      e.stopPropagation();
-      langMenu.classList.toggle('open');
-    });
-
-    document.addEventListener('click', e => {
-      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-        langMenu.classList.remove('open');
-      }
-    });
-
-    langMenu.querySelectorAll('.lang-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const lang = item.dataset.lang;
-        langMenu.querySelectorAll('.lang-item').forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-        if (langCurrent) langCurrent.textContent = lang.toUpperCase();
-        langMenu.classList.remove('open');
-
-        // Trigger i18n change if available
-        if (typeof window.setLocale === 'function') window.setLocale(lang);
-      });
     });
   }
 
@@ -170,7 +154,7 @@
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const y = window.scrollY + 120;
+    const y = window.scrollY + 140;
     sections.forEach(s => {
       if (y >= s.offsetTop) current = s.id;
     });
@@ -196,7 +180,7 @@
           item.classList.remove('hidden-card');
           item.style.opacity = '0';
           item.style.transform = 'translateY(10px)';
-          item.style.transition = 'opacity .4s ease, transform .4s ease';
+          item.style.transition = 'opacity .35s ease, transform .35s ease';
           requestAnimationFrame(() => {
             item.style.opacity = '1';
             item.style.transform = 'translateY(0)';
@@ -215,7 +199,7 @@
         e.target.classList.add('in-view');
       }
     });
-  }, { threshold: 0.06 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
@@ -226,11 +210,12 @@
   if (form && sendBtn) {
     form.addEventListener('submit', e => {
       e.preventDefault();
+      const originalText = sendBtn.textContent;
       sendBtn.textContent = 'Message Sent ✓';
       sendBtn.style.background = '#22c55e';
       sendBtn.style.color = '#fff';
       setTimeout(() => {
-        sendBtn.textContent = 'Send Message →';
+        sendBtn.textContent = originalText;
         sendBtn.style.background = '';
         sendBtn.style.color = '';
         form.reset();
@@ -238,14 +223,14 @@
     });
   }
 
-  // ── HERO NAME HOVER PARALLAX ───────────────────────────────────
+  // ── HERO NAME HOVER PARALLAX (Desktop only) ────────────────────
   const heroName = document.querySelector('.hero-name');
-  if (heroName) {
+  if (heroName && !isTouch) {
     document.addEventListener('mousemove', e => {
       const px = (e.clientX / window.innerWidth - 0.5) * 8;
       const py = (e.clientY / window.innerHeight - 0.5) * 4;
-      heroName.style.transform = `translate(${px}px, ${py}px)`;
-    });
+      heroName.style.transform = `translate3d(${px}px, ${py}px, 0)`;
+    }, { passive: true });
   }
 
   // ── DOCK SCROLL EFFECT ─────────────────────────────────────────

@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faiz Khatri — AI & Full Stack Engineer</title>
-  <meta name="description" content="Faiz Khatri — AI & Full Stack Engineer building intelligent web products. 5th Semester IT Student · 8.55 SPI · GTU.">
+  <title>Faiz Khatri — AI Systems & LLM Engineer</title>
+  <meta name="description" content="Faiz Khatri — AI Systems & LLM Engineer specializing in Agentic AI Workflows, Advanced RAG, and AWS Bedrock. 5th Semester IT Student · 8.55 SPI · GTU.">
   <meta name="author" content="Faiz Khatri">
-  <meta property="og:title" content="Faiz Khatri — AI & Full Stack Engineer">
-  <meta property="og:description" content="Building thoughtful digital products across full-stack engineering and modern intelligent applications.">
+  <meta property="og:title" content="Faiz Khatri — AI Systems & LLM Engineer">
+  <meta property="og:description" content="Architecting production-ready Agentic AI workflows, Advanced RAG systems, and intelligent applications.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://faizxcode.netlify.app/">
 
@@ -20,18 +20,21 @@
 </head>
 
 <body>
-  <!-- Custom Cursor -->
-  <div id="cur"></div>
-  <div id="ring"></div>
+  <!-- Smooth CRT Retro-Cyber Screen Overlay (Desktop & Mobile) -->
+  <div class="crt-overlay" aria-hidden="true"></div>
 
-  <!-- Background -->
-  <div class="bg-noise"></div>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
-  <canvas id="bg-grid-canvas"></canvas>
+  <!-- Hardware-Accelerated Smooth Cursor -->
+  <div id="cur" aria-hidden="true"></div>
+  <div id="ring" aria-hidden="true"></div>
+
+  <!-- Ambient Background -->
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <canvas id="bg-grid-canvas" aria-hidden="true"></canvas>
 
   <!-- ═══════════════════════════════════════
-       01 · NAVIGATION
+       01 · NAVIGATION DOCK
   ═══════════════════════════════════════ -->
   <nav class="dock" id="dock" role="navigation" aria-label="Main navigation">
     <div class="dock-left">
@@ -44,19 +47,19 @@
     </div>
 
     <div class="dock-mid" id="dock-mid">
-      <a href="#about" class="dock-link">About</a>
-      <a href="#capabilities" class="dock-link">Capabilities</a>
-      <a href="#work" class="dock-link">Work</a>
-      <a href="#skills" class="dock-link">Skills</a>
-      <a href="#experience" class="dock-link">Experience</a>
-      <a href="#contact" class="dock-link">Contact</a>
+      <a href="#about" class="dock-link" data-i18n="nav.about">About</a>
+      <a href="#capabilities" class="dock-link" data-i18n="nav.capabilities">Capabilities</a>
+      <a href="#work" class="dock-link" data-i18n="nav.work">Work</a>
+      <a href="#skills" class="dock-link" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="dock-link" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" class="dock-link" data-i18n="nav.contact">Contact</a>
     </div>
 
     <div class="dock-right">
       <div class="lang-wrap">
         <button class="lang-pill" id="langBtn" aria-haspopup="true" aria-expanded="false">
           <span id="langCurrent">EN</span>
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><path d="M2 3.5L5 6.5L8 3.5"/></svg>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5"/></svg>
         </button>
         <div class="lang-menu" id="langMenu" role="menu">
           <button class="lang-item active" data-lang="en" role="menuitem">English <span>EN</span></button>
@@ -66,8 +69,8 @@
         </div>
       </div>
       <a href="https://github.com/faizkhatri196" target="_blank" rel="noopener" class="dock-gh" aria-label="GitHub Profile">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span>GitHub</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span data-i18n="nav.github">GitHub</span>
       </a>
       <button class="dock-burger" id="dockBurger" aria-label="Toggle navigation menu">
         <span></span><span></span>
@@ -84,7 +87,7 @@
 
       <div class="hero-eyebrow reveal">
         <span class="eyebrow-line"></span>
-        <span class="eyebrow-label">PORTFOLIO / 2026</span>
+        <span class="eyebrow-label" data-i18n="hero.eyebrow">PORTFOLIO / 2026</span>
       </div>
 
       <div class="hero-name-block">
@@ -96,26 +99,26 @@
 
       <div class="hero-bottom reveal rd3">
         <div class="hero-desc-block">
-          <div class="hero-role-line">AI / FULL STACK ENGINEER</div>
+          <div class="hero-role-line" data-i18n="hero.role">AI SYSTEMS & AGENTIC WORKFLOWS ENGINEER</div>
           <div class="hero-tw-row">
-            <span class="hero-tw-pre">Building →</span>
+            <span class="hero-tw-pre" data-i18n="hero.tw_pre">Building →</span>
             <span id="typed" class="hero-tw-word"></span><span class="hero-tw-cursor">|</span>
           </div>
-          <p class="hero-statement">
-            Building thoughtful digital products across <strong>full-stack engineering</strong> and <strong>modern intelligent applications</strong>. Currently a 5th Semester IT student at GTU with 8.55 SPI.
+          <p class="hero-statement" data-i18n="hero.statement">
+            Architecting production-ready <strong>Agentic AI workflows</strong>, <strong>Advanced RAG systems</strong>, and high-performance intelligent software with <strong>AWS Bedrock & LLMs</strong>. 5th Semester IT Student at GTU with 8.55 SPI.
           </p>
         </div>
 
         <div class="hero-actions">
-          <a href="#work" class="btn-primary">View Work →</a>
-          <a href="#contact" class="btn-ghost">Contact</a>
-          <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost">Resume ↗</a>
+          <a href="#work" class="btn-primary" data-i18n="hero.btn_work">View Work →</a>
+          <a href="#contact" class="btn-ghost" data-i18n="hero.btn_contact">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn-ghost" data-i18n="hero.btn_resume">Resume ↗</a>
         </div>
       </div>
 
       <div class="hero-scroll-hint" aria-hidden="true">
         <span class="scroll-dot"></span>
-        <span>SCROLL</span>
+        <span data-i18n="hero.scroll">SCROLL</span>
       </div>
 
     </div>
@@ -128,24 +131,24 @@
   <section id="about" class="section">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">01</span>
+        <span class="sec-num" data-i18n="about.sec_num">01</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">About</span>
+        <span class="sec-title-sm" data-i18n="about.sec_title">About</span>
       </div>
 
       <div class="about-grid">
         <div class="about-left reveal rd1">
-          <h2 class="about-headline">
-            I build software where <em>engineering precision</em> meets <em>thoughtful design.</em>
+          <h2 class="about-headline" data-i18n="about.headline">
+            I engineer software where <em>machine intelligence</em> meets <em>production precision.</em>
           </h2>
-          <p class="about-body">
-            I'm Faiz Khatri, an <strong>AI / Full Stack Engineer</strong> passionate about building products that solve real problems. My work spans intelligent web applications, modern frontend experiences, and robust backend systems.
+          <p class="about-body" data-i18n="about.body1">
+            I am Faiz Khatri, an <strong>AI Systems & LLM Engineer</strong> and 5th Semester IT Engineering student (8.55 SPI) in India. I specialize in designing autonomous agentic workflows, Advanced RAG architectures, and scalable intelligent systems powered by <strong>AWS Bedrock</strong>, <strong>Python</strong>, and <strong>LangGraph</strong>.
           </p>
-          <p class="about-body">
-            I believe in writing clean, maintainable code and creating digital experiences that feel natural and purposeful.
+          <p class="about-body" data-i18n="about.body2">
+            My engineering philosophy prioritizes verifiable agent reasoning, low-latency semantic retrieval, clean architectural boundaries, and practical real-world utility.
           </p>
           <div class="about-cta-row">
-            <a href="#contact" class="btn-primary">Let's Talk →</a>
+            <a href="#contact" class="btn-primary" data-i18n="about.btn_talk">Let's Talk →</a>
             <a href="https://www.linkedin.com/in/faiz-khatri-1912ab344" target="_blank" rel="noopener" class="btn-ghost">LinkedIn ↗</a>
           </div>
         </div>
@@ -153,25 +156,25 @@
         <div class="about-right reveal rd2">
           <div class="info-card">
             <div class="info-row">
-              <span class="info-key">Status</span>
+              <span class="info-key" data-i18n="about.info_status_k">Status</span>
               <div class="info-val">
-                <strong>5th Semester Student</strong>
-                <span>B.E. · Information Technology · GTU</span>
+                <strong data-i18n="about.info_status_v1">5th Semester Student</strong>
+                <span data-i18n="about.info_status_v2">B.E. · Information Technology · GTU</span>
                 <span class="badge-spi">8.55 SPI</span>
               </div>
             </div>
             <div class="info-row">
-              <span class="info-key">Focus</span>
+              <span class="info-key" data-i18n="about.info_focus_k">Core Focus</span>
               <div class="info-val">
-                <strong>Full Stack & AI Applications</strong>
-                <span>React · Node.js · Python · LLMs</span>
+                <strong data-i18n="about.info_focus_v1">Agentic AI & Advanced RAG</strong>
+                <span data-i18n="about.info_focus_v2">LLMs · AWS Bedrock · LangGraph · Python</span>
               </div>
             </div>
             <div class="info-row">
-              <span class="info-key">Available</span>
+              <span class="info-key" data-i18n="about.info_avail_k">Available</span>
               <div class="info-val">
-                <strong>Internships & Freelance</strong>
-                <span>Remote-first · Open to collaboration</span>
+                <strong data-i18n="about.info_avail_v1">AI Internships & Engineering</strong>
+                <span data-i18n="about.info_avail_v2">Remote-first · Open to high-impact roles</span>
               </div>
             </div>
           </div>
@@ -182,48 +185,48 @@
 
 
   <!-- ═══════════════════════════════════════
-       03 · CAPABILITIES
+       03 · CAPABILITIES (AI FOCUSED)
   ═══════════════════════════════════════ -->
   <section id="capabilities" class="section section-dark">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">02</span>
+        <span class="sec-num" data-i18n="cap.sec_num">02</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">What I Build</span>
+        <span class="sec-title-sm" data-i18n="cap.sec_title">What I Build</span>
       </div>
 
-      <h2 class="section-heading reveal rd1">CAPABIL<em>ITIES</em></h2>
+      <h2 class="section-heading reveal rd1" data-i18n="cap.heading">CAPABIL<em>ITIES</em></h2>
 
       <div class="cap-list">
         <div class="cap-row reveal rd1">
           <span class="cap-num">01</span>
           <div class="cap-content">
-            <h3 class="cap-title">Full Stack Development</h3>
-            <p class="cap-desc">End-to-end web applications with React, Node.js, and modern frameworks. From database architecture to polished user interfaces.</p>
+            <h3 class="cap-title" data-i18n="cap.c1_title">Agentic AI Workflows</h3>
+            <p class="cap-desc" data-i18n="cap.c1_desc">Multi-step autonomous agent architectures with dynamic tool calling, memory management, and structured LangGraph state execution.</p>
           </div>
           <span class="cap-arrow" aria-hidden="true">→</span>
         </div>
         <div class="cap-row reveal rd2">
           <span class="cap-num">02</span>
           <div class="cap-content">
-            <h3 class="cap-title">Web Applications</h3>
-            <p class="cap-desc">Responsive, performant, and accessible web experiences built with modern JavaScript, CSS, and component-driven architecture.</p>
+            <h3 class="cap-title" data-i18n="cap.c2_title">Advanced RAG Systems</h3>
+            <p class="cap-desc" data-i18n="cap.c2_desc">Production retrieval pipelines featuring query rewriting, hybrid semantic search, metadata filtering, reranking, and contextual compression.</p>
           </div>
           <span class="cap-arrow" aria-hidden="true">→</span>
         </div>
         <div class="cap-row reveal rd3">
           <span class="cap-num">03</span>
           <div class="cap-content">
-            <h3 class="cap-title">Product Engineering</h3>
-            <p class="cap-desc">Taking ideas from concept to deployed product — wireframe, prototype, build, ship, iterate. Full ownership of the development lifecycle.</p>
+            <h3 class="cap-title" data-i18n="cap.c3_title">LLM & Cloud AI Orchestration</h3>
+            <p class="cap-desc" data-i18n="cap.c3_desc">Deploying scalable foundation model workflows using AWS Bedrock, Claude, and specialized open-source model pipelines.</p>
           </div>
           <span class="cap-arrow" aria-hidden="true">→</span>
         </div>
         <div class="cap-row reveal rd4">
           <span class="cap-num">04</span>
           <div class="cap-content">
-            <h3 class="cap-title">Intelligent Applications</h3>
-            <p class="cap-desc">Integrating LLMs, RAG systems, and agentic workflows into practical products that solve real-world problems.</p>
+            <h3 class="cap-title" data-i18n="cap.c4_title">Intelligent Full Stack Products</h3>
+            <p class="cap-desc" data-i18n="cap.c4_desc">Bridging complex AI architectures with sleek, ultra-responsive web interfaces built with React, Node.js, and Python.</p>
           </div>
           <span class="cap-arrow" aria-hidden="true">→</span>
         </div>
@@ -238,18 +241,18 @@
   <section id="work" class="section">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">03</span>
+        <span class="sec-num" data-i18n="projects.sec_num">03</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">Selected Work</span>
+        <span class="sec-title-sm" data-i18n="projects.sec_title">Selected Work</span>
       </div>
 
       <div class="work-header reveal rd1">
-        <h2 class="section-heading">SELECTED<br><em>WORK</em></h2>
+        <h2 class="section-heading" data-i18n="projects.heading">SELECTED<br><em>WORK</em></h2>
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ai">AI</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="projects.filter_all">All</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="projects.filter_ai">AI & Agents</button>
+          <button class="filter-btn" data-filter="fullstack" data-i18n="projects.filter_fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="web" data-i18n="projects.filter_web">Web & Tools</button>
         </div>
       </div>
 
@@ -262,8 +265,8 @@
         </div>
         <div class="proj-feature-info">
           <span class="proj-label">FEATURED — 01</span>
-          <h3 class="proj-feature-title">LinkedIn Profile JSON Fetcher</h3>
-          <p class="proj-feature-desc">An automated profile data extraction tool and REST API that fetches and parses public LinkedIn profiles into clean, structured JSON format in real-time.</p>
+          <h3 class="proj-feature-title" data-i18n="projects.p1_title">LinkedIn Profile JSON Fetcher</h3>
+          <p class="proj-feature-desc" data-i18n="projects.p1_desc">An automated profile data extraction tool and REST API that fetches and parses public LinkedIn profiles into clean, structured JSON format in real-time.</p>
           <div class="proj-pills">
             <span class="pill pill-glow">REST API</span>
             <span class="pill">JSON Parser</span>
@@ -286,8 +289,8 @@
         </div>
         <div class="proj-feature-info">
           <span class="proj-label">02</span>
-          <h3 class="proj-feature-title">AI Career Intelligence System</h3>
-          <p class="proj-feature-desc">Advanced career guidance platform using LLMs, RAG pipelines, and LangChain — delivering personalized professional insights and intelligent roadmap synthesis.</p>
+          <h3 class="proj-feature-title" data-i18n="projects.p2_title">AI Career Intelligence System</h3>
+          <p class="proj-feature-desc" data-i18n="projects.p2_desc">Advanced career guidance platform using LLMs, RAG pipelines, and LangChain — delivering personalized professional insights and intelligent roadmap synthesis.</p>
           <div class="proj-pills">
             <span class="pill pill-glow">Advanced RAG</span>
             <span class="pill">LLMs</span>
@@ -311,12 +314,12 @@
         <div class="proj-wide-body">
           <div class="proj-wide-info">
             <span class="proj-label">03</span>
-            <h3 class="proj-wide-title">AI Copilot Interview Platform</h3>
-            <p class="proj-wide-desc">AI-powered interview assistant helping students master technical interviews with real-time feedback and structured evaluations.</p>
+            <h3 class="proj-wide-title" data-i18n="projects.p3_title">AI Copilot Interview Platform</h3>
+            <p class="proj-wide-desc" data-i18n="projects.p3_desc">AI-powered interview assistant helping students master technical interviews with real-time feedback and structured evaluations.</p>
           </div>
           <div class="proj-wide-meta">
             <div class="proj-pills">
-              <span class="pill">LLM Integration</span>
+              <span class="pill pill-glow">LLM Evaluation</span>
               <span class="pill">Node.js</span>
               <span class="pill">MongoDB</span>
             </div>
@@ -333,8 +336,8 @@
         <article class="proj-list-item reveal rd1" data-category="ai web">
           <span class="proj-list-num">04</span>
           <div class="proj-list-body">
-            <h4 class="proj-list-title">AI Smart City Management</h4>
-            <p class="proj-list-desc">Location intelligence platform for smart city infrastructure management and urban analytics.</p>
+            <h4 class="proj-list-title" data-i18n="projects.p4_title">AI Smart City Management</h4>
+            <p class="proj-list-desc" data-i18n="projects.p4_desc">Location intelligence platform for smart city infrastructure management and urban analytics.</p>
             <div class="proj-list-tags">
               <span>React</span><span>TypeScript</span><span>Tailwind</span>
             </div>
@@ -348,8 +351,8 @@
         <article class="proj-list-item reveal rd2" data-category="ai web">
           <span class="proj-list-num">05</span>
           <div class="proj-list-body">
-            <h4 class="proj-list-title">AI House Price Prediction + 3D Platform</h4>
-            <p class="proj-list-desc">AI price prediction with interactive 3D real estate visualization and market analytics.</p>
+            <h4 class="proj-list-title" data-i18n="projects.p5_title">AI House Price Prediction + 3D Platform</h4>
+            <p class="proj-list-desc" data-i18n="projects.p5_desc">AI price prediction with interactive 3D real estate visualization and market analytics.</p>
             <div class="proj-list-tags">
               <span>Machine Learning</span><span>Python</span><span>3D WebGL</span>
             </div>
@@ -363,8 +366,8 @@
         <article class="proj-list-item reveal rd3" data-category="web fullstack">
           <span class="proj-list-num">06</span>
           <div class="proj-list-body">
-            <h4 class="proj-list-title">Let's Travel World — Tourist Guide</h4>
-            <p class="proj-list-desc">Worldwide travel guide with dynamic visual information and interactive regional maps.</p>
+            <h4 class="proj-list-title" data-i18n="projects.p6_title">Let's Travel World — Tourist Guide</h4>
+            <p class="proj-list-desc" data-i18n="projects.p6_desc">Worldwide travel guide with dynamic visual information and interactive regional maps.</p>
             <div class="proj-list-tags">
               <span>React</span><span>D3.js</span><span>Express</span>
             </div>
@@ -381,21 +384,56 @@
 
 
   <!-- ═══════════════════════════════════════
-       05 · SKILLS
+       05 · SKILLS MATRIX (AI FIRST)
   ═══════════════════════════════════════ -->
   <section id="skills" class="section section-dark">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">04</span>
+        <span class="sec-num" data-i18n="skills.sec_num">04</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">Technologies</span>
+        <span class="sec-title-sm" data-i18n="skills.sec_title">Technologies</span>
       </div>
 
-      <h2 class="section-heading reveal rd1">SKILL<br><em>MATRIX</em></h2>
+      <h2 class="section-heading reveal rd1" data-i18n="skills.heading">SKILL<br><em>MATRIX</em></h2>
 
       <div class="skill-grid">
+        <!-- Group 1: AI / LLM & RAG (Primary) -->
         <div class="skill-group reveal rd1">
-          <h3 class="skill-group-title">Frontend</h3>
+          <h3 class="skill-group-title" data-i18n="skills.g1_title">AI / LLM & RAG</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--acc)"></span><span>Advanced RAG</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--acc)"></span><span>Agentic AI Workflows</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--aws)"></span><span>AWS Bedrock</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:#10b981"></span><span>LangGraph & LangChain</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:#a855f7"></span><span>Tool Calling & Agents</span></li>
+          </ul>
+        </div>
+
+        <!-- Group 2: Programming & AI Core -->
+        <div class="skill-group reveal rd2">
+          <h3 class="skill-group-title" data-i18n="skills.g2_title">Programming & AI Core</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.25 3.18L7.97 16.08h4.35L9.78 20.82 16.03 7.92h-4.35l2.57-4.74z"/></svg><span>Python</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.585-.585-.765-.63-.63-1.47-.945-2.83-.885l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.29-.81 3.54.6 4.47 1.38.91 3.405 1.11 3.66 1.965.24 1.05-.78 1.38-1.77 1.26-.72-.165-1.125-.57-1.56-1.29l-1.83 1.05c.21.48.48.69.78 1.11 1.47 1.38 5.13 1.32 5.79-.78.03-.06.24-.72.045-1.68zm-8.592-2.445l-2.22.015c0 1.8-.015 3.585-.015 5.385-.12 1.005.12 1.935-.36 2.37-.36.3-1.005.24-1.335.105-.345-.165-.525-.405-.72-.72-.06-.09-.105-.165-.12-.165L6.16 21.936c.375.75.93 1.35 1.65 1.65.93.375 2.175.39 2.925-.12.975-.66 1.395-1.59 1.365-2.805-.015-1.83 0-3.66 0-5.49l-.015-1.335z"/></svg><span>JavaScript</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 0 1 6.156 3.553l-3.076 1.78a3.567 3.567 0 0 0-3.08-1.78A3.56 3.56 0 0 0 8.444 12 3.56 3.56 0 0 0 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.078 1.78A7.135 7.135 0 0 1 12 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm3.16 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg><span>C++</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M16.566 4.637A7.9 7.9 0 0 0 12 3c-4.42 0-8 3.58-8 8 0 1.68.52 3.24 1.4 4.53L12 12l4.566-7.363z M20.236 7.5H12l3.218 5.196 5.018-4.696z M20.6 8.57L14.5 12l3.1 5.02A7.98 7.98 0 0 0 20 12c0-1.2-.27-2.39-.8-3.43z"/></svg><span>Java</span></li>
+          </ul>
+        </div>
+
+        <!-- Group 3: Backend & APIs -->
+        <div class="skill-group reveal rd3">
+          <h3 class="skill-group-title" data-i18n="skills.g3_title">Backend & APIs</h3>
+          <ul class="skill-items">
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.136,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z"/></svg><span>Node.js</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3.56L12 .64 6.8 3.56 12 6.48l5.2-2.92zM5.6 4.4v5.84L10.8 13V7.16L5.6 4.4zm12.8 0L13.2 7.16V13l5.2-2.76V4.4zM5.6 11.44v5.84l5.2 2.76v-5.84L5.6 11.44zm12.8 0L13.2 14.2v5.84l5.2-2.76v-5.84zM12 15.36L6.8 18.28 12 21.2l5.2-2.92L12 15.36z"/></svg><span>Express.js</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.17c.733-.444 1.476-.922 1.87-1.38 1.309-1.517 2.007-3.174 2.21-4.72.268-2.042-.177-4.15-.967-5.345z"/></svg><span>MongoDB</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--acc)"></span><span>REST APIs</span></li>
+          </ul>
+        </div>
+
+        <!-- Group 4: Frontend & UI -->
+        <div class="skill-group reveal rd4">
+          <h3 class="skill-group-title" data-i18n="skills.g4_title">Frontend & UI</h3>
           <ul class="skill-items">
             <li class="skill-item">
               <svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.31 0-.6.065-.855.19C5.36 1.97 4.92 3.306 5.168 5.25a13.3 13.3 0 0 0 .413 2.047 13.3 13.3 0 0 0-2.047.413C1.586 8.302.254 9.28.254 10.485c0 1.346.96 3.107 2.622 4.888-1.653 1.78-2.602 3.542-2.602 4.887 0 1.205 1.332 2.183 3.37 2.775a13.3 13.3 0 0 0 2.047.413 13.3 13.3 0 0 0-.413 2.047c-.247 1.943.193 3.28 1.08 3.726.254.125.544.19.854.19 1.346 0 3.107-.96 4.888-2.622 1.78 1.653 3.542 2.602 4.887 2.602.31 0 .6-.065.855-.19.888-.447 1.327-1.783 1.08-3.726a13.3 13.3 0 0 0-.413-2.047 13.3 13.3 0 0 0 2.047-.413c2.038-.592 3.37-1.57 3.37-2.775 0-1.346-.96-3.107-2.622-4.888 1.653-1.78 2.602-3.542 2.602-4.887 0-1.205-1.332-2.183-3.37-2.775a13.3 13.3 0 0 0-2.047-.413c.146-.68.26-1.366.344-2.047.247-1.943-.193-3.28-1.08-3.726a1.83 1.83 0 0 0-.855-.19z"/></svg>
@@ -405,50 +443,19 @@
               <svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.86-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.573 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z"/></svg>
               <span>Next.js</span>
             </li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.585-.585-.765-.63-.63-1.47-.945-2.83-.885l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.29-.81 3.54.6 4.47 1.38.91 3.405 1.11 3.66 1.965.24 1.05-.78 1.38-1.77 1.26-.72-.165-1.125-.57-1.56-1.29l-1.83 1.05c.21.48.48.69.78 1.11 1.47 1.38 5.13 1.32 5.79-.78.03-.06.24-.72.045-1.68zm-8.592-2.445l-2.22.015c0 1.8-.015 3.585-.015 5.385-.12 1.005.12 1.935-.36 2.37-.36.3-1.005.24-1.335.105-.345-.165-.525-.405-.72-.72-.06-.09-.105-.165-.12-.165L6.16 21.936c.375.75.93 1.35 1.65 1.65.93.375 2.175.39 2.925-.12.975-.66 1.395-1.59 1.365-2.805-.015-1.83 0-3.66 0-5.49l-.015-1.335z"/></svg><span>JavaScript</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.071-.747.168-1.97.069-.762H6.474l.615 6.202h7.142l-.26 2.966-2.571.688-2.592-.688-.164-1.87H6.69l.32 3.63 4.39 1.199.026-.006 4.38-1.199.56-6.248H8.53z"/></svg><span>HTML</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716H6.7l.227 2.621h7.79l-.309 3.471-2.888.753-2.843-.754-.195-2.228h-2.61l.38 4.466L12 21.594l5.612-1.596.48-5.396H7.854"/></svg><span>CSS</span></li>
             <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C7.666,17.818,9.027,19.2,12.001,19.2c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg><span>Tailwind CSS</span></li>
+            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716H6.7l.227 2.621h7.79l-.309 3.471-2.888.753-2.843-.754-.195-2.228h-2.61l.38 4.466L12 21.594l5.612-1.596.48-5.396H7.854"/></svg><span>HTML / CSS</span></li>
           </ul>
         </div>
 
-        <div class="skill-group reveal rd2">
-          <h3 class="skill-group-title">Backend</h3>
-          <ul class="skill-items">
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.136,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z"/></svg><span>Node.js</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.2 3.56L12 .64 6.8 3.56 12 6.48l5.2-2.92zM5.6 4.4v5.84L10.8 13V7.16L5.6 4.4zm12.8 0L13.2 7.16V13l5.2-2.76V4.4zM5.6 11.44v5.84l5.2 2.76v-5.84L5.6 11.44zm12.8 0L13.2 14.2v5.84l5.2-2.76v-5.84zM12 15.36L6.8 18.28 12 21.2l5.2-2.92L12 15.36z"/></svg><span>Express.js</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.17c.733-.444 1.476-.922 1.87-1.38 1.309-1.517 2.007-3.174 2.21-4.72.268-2.042-.177-4.15-.967-5.345z"/></svg><span>MongoDB</span></li>
-          </ul>
-        </div>
-
-        <div class="skill-group reveal rd3">
-          <h3 class="skill-group-title">Programming</h3>
-          <ul class="skill-items">
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.25 3.18L7.97 16.08h4.35L9.78 20.82 16.03 7.92h-4.35l2.57-4.74z"/></svg><span>Python</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M16.566 4.637A7.9 7.9 0 0 0 12 3c-4.42 0-8 3.58-8 8 0 1.68.52 3.24 1.4 4.53L12 12l4.566-7.363z M20.236 7.5H12l3.218 5.196 5.018-4.696z M20.6 8.57L14.5 12l3.1 5.02A7.98 7.98 0 0 0 20 12c0-1.2-.27-2.39-.8-3.43z"/></svg><span>Java</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.66 7.73a3.39 3.39 0 0 0-2.3-2.3 36.16 36.16 0 0 0-3.36-.6 40.94 40.94 0 0 0-6 0 36.16 36.16 0 0 0-3.36.6 3.39 3.39 0 0 0-2.3 2.3C3 9.13 3 12 3 12s0 2.87.34 4.27a3.39 3.39 0 0 0 2.3 2.3 36.16 36.16 0 0 0 3.36.6 40.94 40.94 0 0 0 6 0 36.16 36.16 0 0 0 3.36-.6 3.39 3.39 0 0 0 2.3-2.3C21 14.87 21 12 21 12s0-2.87-.34-4.27zM10 15V9l5 3-5 3z"/></svg><span>C</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 0 1 6.156 3.553l-3.076 1.78a3.567 3.567 0 0 0-3.08-1.78A3.56 3.56 0 0 0 8.444 12 3.56 3.56 0 0 0 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.078 1.78A7.135 7.135 0 0 1 12 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm3.16 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg><span>C++</span></li>
-          </ul>
-        </div>
-
-        <div class="skill-group reveal rd4">
-          <h3 class="skill-group-title">AI / LLM</h3>
-          <ul class="skill-items">
-            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--acc)"></span><span>Advanced RAG</span></li>
-            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--acc)"></span><span>Agentic AI</span></li>
-            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--aws)"></span><span>AWS Bedrock</span></li>
-            <li class="skill-item"><span class="skill-ico-dot" style="background:#10b981"></span><span>LangChain</span></li>
-            <li class="skill-item"><span class="skill-ico-dot" style="background:#10b981"></span><span>LangGraph</span></li>
-          </ul>
-        </div>
-
+        <!-- Group 5: Cloud & Platforms -->
         <div class="skill-group reveal rd5">
-          <h3 class="skill-group-title">Tools & Platforms</h3>
+          <h3 class="skill-group-title" data-i18n="skills.g5_title">Cloud & Platforms</h3>
           <ul class="skill-items">
             <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg><span>Git & GitHub</span></li>
+            <li class="skill-item"><span class="skill-ico-dot" style="background:var(--aws)"></span><span>AWS Cloud</span></li>
             <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg><span>Vercel</span></li>
             <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19.5h20L12 2zm0 3l7.5 13H4.5L12 5z"/></svg><span>Render</span></li>
-            <li class="skill-item"><svg class="skill-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg><span>Netlify</span></li>
           </ul>
         </div>
       </div>
@@ -462,25 +469,25 @@
   <section id="experience" class="section">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">05</span>
+        <span class="sec-num" data-i18n="exp.sec_num">05</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">Work Experience</span>
+        <span class="sec-title-sm" data-i18n="exp.sec_title">Work Experience</span>
       </div>
 
-      <h2 class="section-heading reveal rd1">EXPER<em>IENCE</em></h2>
+      <h2 class="section-heading reveal rd1" data-i18n="exp.heading">EXPER<em>IENCE</em></h2>
 
       <div class="exp-timeline">
         <article class="exp-item reveal rd1">
           <div class="exp-period">
             <span class="exp-dot"></span>
-            <span class="exp-year">Jul 2026 — Aug 2026</span>
+            <span class="exp-year" data-i18n="exp.item1_year">Jul 2026 — Aug 2026</span>
           </div>
           <div class="exp-body">
-            <span class="exp-company">Sysslan IT Solutions</span>
-            <h3 class="exp-role">Full Stack Developer</h3>
-            <p class="exp-desc">Architected and deployed production web applications end-to-end using React.js, Node.js, and MongoDB Atlas. Owned staging-to-production deployment cycles and led internal technical knowledge sessions.</p>
+            <span class="exp-company" data-i18n="exp.item1_company">Sysslan IT Solutions</span>
+            <h3 class="exp-role" data-i18n="exp.item1_role">Full Stack & AI Developer</h3>
+            <p class="exp-desc" data-i18n="exp.item1_desc">Architected and deployed production web applications and AI workflows using React.js, Node.js, and MongoDB Atlas. Owned staging-to-production deployment cycles and led technical workshops on LLM integrations.</p>
             <div class="exp-tags">
-              <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>Production Deployment</span>
+              <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>LLM Integration</span>
             </div>
           </div>
         </article>
@@ -488,14 +495,14 @@
         <article class="exp-item reveal rd2">
           <div class="exp-period">
             <span class="exp-dot"></span>
-            <span class="exp-year">2024 — Aug 2025</span>
+            <span class="exp-year" data-i18n="exp.item2_year">2024 — Aug 2025</span>
           </div>
           <div class="exp-body">
-            <span class="exp-company">Upwork</span>
-            <h3 class="exp-role">Freelance Web & AI Developer</h3>
-            <p class="exp-desc">Delivered 5+ client projects spanning full-stack web applications and custom AI dashboards. Reduced data processing latency through automated Python scripts and React-based interfaces.</p>
+            <span class="exp-company" data-i18n="exp.item2_company">Upwork</span>
+            <h3 class="exp-role" data-i18n="exp.item2_role">Freelance AI & Web Engineer</h3>
+            <p class="exp-desc" data-i18n="exp.item2_desc">Delivered 5+ client projects building automated Python AI workflows, RAG assistants, and interactive client dashboards with low latency.</p>
             <div class="exp-tags">
-              <span>Full Stack</span><span>Python</span><span>React</span><span>Client Delivery</span>
+              <span>Agentic AI</span><span>Python</span><span>React</span><span>Client Delivery</span>
             </div>
           </div>
         </article>
@@ -510,16 +517,16 @@
   <section id="education" class="section section-dark">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">06</span>
+        <span class="sec-num" data-i18n="edu.sec_num">06</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">Education</span>
+        <span class="sec-title-sm" data-i18n="edu.sec_title">Education</span>
       </div>
 
       <div class="edu-block reveal rd1">
-        <h2 class="edu-title">GTU</h2>
+        <h2 class="edu-title" data-i18n="edu.title">GTU</h2>
         <div class="edu-details">
-          <span class="edu-degree">B.E. · Information Technology</span>
-          <span class="edu-meta">5th Semester · Currently Enrolled</span>
+          <span class="edu-degree" data-i18n="edu.degree">B.E. · Information Technology</span>
+          <span class="edu-meta" data-i18n="edu.meta">5th Semester · Currently Enrolled</span>
           <span class="badge-spi">8.55 SPI</span>
         </div>
       </div>
@@ -533,20 +540,20 @@
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="sec-label reveal">
-        <span class="sec-num">07</span>
+        <span class="sec-num" data-i18n="contact.sec_num">07</span>
         <span class="sec-rule"></span>
-        <span class="sec-title-sm">Contact</span>
+        <span class="sec-title-sm" data-i18n="contact.sec_title">Contact</span>
       </div>
 
       <div class="contact-grid">
         <div class="contact-left reveal rd1">
-          <h2 class="contact-display">
+          <h2 class="contact-display" data-i18n="contact.heading">
             LET'S<br>
             BUILD<br>
-            <span class="contact-display-outline">SOMETHING<br>USEFUL.</span>
+            <span class="contact-display-outline">SOMETHING<br>INTELLIGENT.</span>
           </h2>
-          <p class="contact-body">
-            Interested in working together? I'm open to internships, freelance opportunities, and collaboration on meaningful projects.
+          <p class="contact-body" data-i18n="contact.body">
+            Interested in AI systems, Agentic workflows, or engineering opportunities? Feel free to reach out directly.
           </p>
           <div class="contact-links">
             <a href="mailto:faizkhatri1819@gmail.com" class="contact-link-item">
@@ -571,18 +578,18 @@
         <div class="contact-right reveal rd2">
           <form class="contact-form" id="contactForm" onsubmit="return false;">
             <div class="cf-group">
-              <label class="cf-label" for="cf-name">Your Name</label>
+              <label class="cf-label" for="cf-name" data-i18n="contact.form_name">Your Name</label>
               <input type="text" id="cf-name" class="cf-input" placeholder="e.g. Alex Morgan" required>
             </div>
             <div class="cf-group">
-              <label class="cf-label" for="cf-email">Your Email</label>
+              <label class="cf-label" for="cf-email" data-i18n="contact.form_email">Your Email</label>
               <input type="email" id="cf-email" class="cf-input" placeholder="alex@example.com" required>
             </div>
             <div class="cf-group">
-              <label class="cf-label" for="cf-msg">Message</label>
+              <label class="cf-label" for="cf-msg" data-i18n="contact.form_msg">Message</label>
               <textarea id="cf-msg" class="cf-textarea" rows="5" placeholder="Hello Faiz, I'd like to discuss..." required></textarea>
             </div>
-            <button type="submit" class="btn-primary btn-full" id="sendBtn">Send Message →</button>
+            <button type="submit" class="btn-primary btn-full" id="sendBtn" data-i18n="contact.btn_send">Send Message →</button>
           </form>
         </div>
       </div>
@@ -596,9 +603,9 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="footer-wordmark">FAIZ KHATRI</span>
+        <span class="footer-wordmark" data-i18n="footer.brand">FAIZ KHATRI</span>
         <span class="footer-sep">·</span>
-        <span class="footer-role">AI / FULL STACK ENGINEER</span>
+        <span class="footer-role" data-i18n="footer.role">AI SYSTEMS & LLM ENGINEER</span>
       </div>
       <div class="footer-nav">
         <a href="https://github.com/faizkhatri196" target="_blank" rel="noopener">GitHub</a>
@@ -606,7 +613,7 @@
         <a href="https://leetcode.com/u/faizkhatri196/" target="_blank" rel="noopener">LeetCode</a>
         <a href="mailto:faizkhatri1819@gmail.com">Email</a>
       </div>
-      <div class="footer-copy">© 2026 Faiz Khatri — All rights reserved.</div>
+      <div class="footer-copy" data-i18n="footer.copy">© 2026 Faiz Khatri — All rights reserved.</div>
     </div>
   </footer>
 
