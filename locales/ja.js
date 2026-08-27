@@ -1,83 +1,96 @@
 window.locale_ja = {
   "nav": {
-    "logo": "< FAIZPORT />",
-    "about": "プロフィール",
-    "experience": "職歴",
+    "logo": "FAIZ KHATRI",
+    "about": "概要",
+    "capabilities": "インデックス",
     "skills": "スキル",
-    "projects": "プロジェクト",
-    "contact": "コンタクト"
+    "work": "実績",
+    "timeline": "実務経験",
+    "contact": "お問い合わせ",
+    "github": "GITHUB ↗"
   },
   "hero": {
-    "badge": "// システムオンライン  ·  IT工学科学生  ·  インターンシップ募集中",
-    "name": "フェイズ・カトリ",
+    "num": "2026 / ポートフォリオ",
+    "title_first": "FAIZ",
+    "title_last": "KHATRI",
+    "role": "AI / フルスタックエンジニア",
+    "statement": "Advanced RAG、Agentic AI、AWS Bedrockを活用した実用的なAIシステムおよびフルスタック製品を構築しています。",
     "typewriter": [
-      "AIエンジニア",
-      "フルスタックエンジニア",
-      "IT工学科学生",
-      "GenAIエヴァンジェリスト",
-      "UIアニメーションマニア"
+      "AI & フルスタックエンジニア",
+      "Advanced RAG スペシャリスト",
+      "Agentic AI デベロッパー",
+      "LLM アプリケーションアーキテクト",
+      "AWS Bedrock プラクティショナー"
     ],
-    "view_projects": "プロジェクトを見る",
-    "contact_me": "連絡をとる",
-    "download_resume": "履歴書をダウンロード",
-    "scroll": "スクロール"
+    "view_work": "実績を見る →",
+    "lets_connect": "お問い合わせ →",
+    "download_resume": "履歴書 ↓"
   },
-  "about": {
-    "title": "私について",
-    "p1": "はじめまして！私は<em>情熱的な開発者</em>であり、<em>IT工学科の学生</em>であるフェイズです。複雑な課題を、クリーンで高速、そしてアニメーション豊かなデジタル体験へと昇華させることを得意としています。ブラウザの開発者ツールと数々の徹夜からコーディングの旅が始まりました。今ではユーザーに愛される<em>フルスタックアプリケーション</em>を開発しています（アルゴリズムやLeetCodeにも非常に関心を持っています！）。",
-    "p2": "私の強みは、<em>エンジニアリングの厳密さ</em>と<em>クリエイティブなUI</em>の融合です。REST API of REST APIの構築からマイクロアニメーションの細部へのこだわりまで、スタックのあらゆるレイヤーに熱意を注いています。",
-    "p3": "現在は学業に励みつつ、個人プロジェクトをリリースし、<em>インターンシップや実社会でのコラボレーション</em>の機会を積極的に模索しています。一緒に素晴らしいものを創り上げましょう！",
-    "stat_projects": "プロジェクト数",
-    "stat_coding": "開発経験年数",
-    "stat_curiosity": "探求心",
-    "code_comment": "// 常に学び、常に挑戦する。"
+  "intro": {
+    "num": "02 / 概要",
+    "headline": "「プロダクトエンジニアリングと実用的なAIが融合するソフトウェアを構築します。」",
+    "p1": "インドを拠点とする<strong>IT工学科第5セメスター専攻（8.55 SPI）</strong>であり、AI / フルスタックエンジニアの Faiz Khatri です。Advanced RAG、Agentic AI ワークフロー、AWS Bedrockを活用した高性能Web製品の開発に注力しています。",
+    "p2": "コードの信頼性、現代的なタイポグラフィ、そして実用的な人工知能の統合を重視しています。",
+    "edu_title": "学歴",
+    "edu_school": "GTU",
+    "edu_degree": "情報技術工学士",
+    "focus_title": "フォーカス",
+    "focus_body": "AIシステム & フルスタック開発",
+    "focus_sub": "Advanced RAG, Agentic AI, Webアプリ",
+    "current_title": "クラウド / AI",
+    "current_body": "AWS Bedrock & LLMオーケストレーション",
+    "current_sub": "Python, Node.js, React & Next.js"
   },
-  "experience": {
-    "title": "実務経験",
-    "sysslan_role": "フルスタックエンジニア",
-    "sysslan_company": "Sysslan IT Solutions",
-    "sysslan_date": "2026年7月 – 2026年8月",
-    "sysslan_p1": "React.jsによるフロントエンド、Node.jsによるバックエンド、およびデータベース層をカバーし、エンドツーエンドのフルスタックWebアプリケーションを開発。",
-    "sysslan_p2": "開発業務と並行して、社内テックイベントのオーガナイザーを務め、企画、ロジスティクス、進行調整を実施。",
-    "sysslan_p3": "開発・テストから本番環境へのリリースまで、Webアプリケーションのエンドツーエンドのデプロイを統括し、スムーズで信頼性の高いロールアウトを実現。",
-    "upwork_role": "フリーランス Web & AI エンジニア",
-    "upwork_company": "Upwork",
-    "upwork_date": "2024年 – 2025年8月",
-    "upwork_p1": "フルスタックWebアプリやAI統合ダッシュボードなど、5件以上のフリーランスプロジェクトを完了し、高いクライアント満足度を維持。",
-    "upwork_p2": "React.jsフロントエンドと連携した自動化Pythonパイプラインにより、クライアントの手動データ入力作業量を約40%削減。",
-    "upwork_p3": "徹底したパフォーマンス最適化により、平均ページ読み込み時間を30%削減するモバイルファーストのレスポンシブUIを構築。",
-    "upwork_p4": "時差を越えて海外クライアントと協働し、曖昧な要件定義から高品質で本番稼働可能な成果物へとスケジュール通りに昇華。"
+  "build": {
+    "num": "03 / 機能・能力",
+    "title": "エンジニアリング能力",
+    "c1_title": "AI搭載アプリケーション",
+    "c1_desc": "LLM、コンテキスト注入、実用的なワークフローを統合したアプリケーションの構築。",
+    "c2_title": "ADVANCED RAG システム",
+    "c2_desc": "クエリ変換、フィルタリング、リランキング、コンテキスト最適化を備えた検索拡張システムの開発。",
+    "c3_title": "AGENTIC AI アプリケーション",
+    "c3_desc": "ツール呼び出しやマルチステップ実行を組み合わせた自律型エージェントの開発。",
+    "c4_title": "フルスタック製品",
+    "c4_desc": "React/Next.js フロントエンドから Node.js/Python バックエンドまでの開発。"
   },
   "skills": {
-    "title": "開発スタック",
-    "frontend": "// フロントエンド",
-    "backend": "// バックエンド",
-    "ai_ml": "// AI & 機械学習",
-    "tools": "// ツール & OS"
+    "num": "04 / スキルマトリクス",
+    "title": "技術 & スキルインデックス",
+    "ai_llm": "AI / LLM",
+    "frontend": "フロントエンド",
+    "backend": "バックエンド",
+    "programming": "プログラミング",
+    "cloud": "クラウド / AI"
   },
   "projects": {
-    "title": "プロジェクト",
-    "p1_desc": "LLM、RAG、LangChainを活用して、インテリジェントでパーソナライズされたキャリアの洞察を提供する高度なキャリアガイダンスシステム。",
-    "p2_desc": "インタラクティブな3D不動産視覚化と市場分析を備えた、次世代AI住宅価格予測プラットフォーム。",
-    "p3_desc": "詳細でダイナミックな視覚情報を備えた、グローバル対応の旅行ガイドシステム。",
-    "p4_desc": "エージェンティックAIを活用してリアルタイムの気象状況を分析し、パーソナライズされたアクティビティの推奨事項を提供するインテリジェントな天気アシスタント。",
-    "p5_desc": "学生が技術面接の対策を効率的に行えるように支援するAI搭載の面接コパイロットモデル。",
-    "p6_desc": "スマートシティのインフラ管理と都市分析のためのロケーション・インテリジェンス・プラットフォーム。"
+    "num": "05 / 主要実績",
+    "title": "主要実績",
+    "subtitle": "フルスタック開発とAIエンジニアリングで構築したプロジェクト。",
+    "filter_all": "すべての実績",
+    "filter_ai": "AI & RAG",
+    "filter_fullstack": "フルスタック",
+    "filter_web": "WEB",
+    "view_project": "ライブデモ ↗",
+    "github": "GITHUB ↗"
+  },
+  "experience": {
+    "num": "06 / 実務経験",
+    "title": "実務経験",
+    "sysslan_role": "フルスタックデベロッパー",
+    "sysslan_company": "Sysslan IT Solutions",
+    "sysslan_date": "2026年7月 – 2026年8月",
+    "upwork_role": "フリーランス Web & AI デベロッパー",
+    "upwork_company": "Upwork",
+    "upwork_date": "2024年 – 2025年8月"
   },
   "contact": {
-    "title": "コンタクト",
-    "heading": "何かを創り出そう。",
-    "p": "現在、インターンシップやフリーランスの案件、オープンソースでのコラボレーションを積極的に探しています。何かアイデアがある方、または技術的な話で盛り上がりたい方は、お気軽にご連絡ください！",
-    "label_name": "お名前",
-    "label_email": "メールアドレス",
-    "label_msg": "メッセージ",
-    "placeholder_name": "お名前",
-    "placeholder_email": "name@example.com",
-    "placeholder_msg": "メッセージを入力してください...",
-    "btn_send": "メッセージを送信する →"
+    "num": "07 / お問い合わせ",
+    "heading": "有用なプロダクトを共に構築しましょう。",
+    "sub": "AIシステム、フルスタックWebエンジニアリング、または製品開発にご興味がありますか？お気軽にご連絡ください。",
+    "btn_send": "メッセージを送信 →"
   },
   "footer": {
-    "built_by": "DESIGNED & BUILT BY <em>FAIZ KHATRI</em> &nbsp;·&nbsp; <em>2025</em>",
-    "note": "// 情熱とコーヒー ☕ で作られています"
+    "brand": "FAIZ KHATRI · AI / FULL STACK ENGINEER",
+    "copy": "© 2026 Faiz Khatri. All rights reserved."
   }
 };

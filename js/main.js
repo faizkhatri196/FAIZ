@@ -1,316 +1,263 @@
-// Master Portfolio Application Controller
+// FAIZ KHATRI — Ultra-Premium Portfolio Controller v3.0
 
-function initMainApp() {
+(function () {
+  'use strict';
 
-  // ── AUDIO SOUND EFFECTS SYNTHESIZER ──
-  const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
-  let audioCtx = null;
-
-  function initAudio() {
-    if (!audioCtx) {
-      audioCtx = new AudioCtxClass();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-  }
-
-  // Trigger audio initialization on first user interaction
-  document.body.addEventListener('click', initAudio, { once: true });
-  document.body.addEventListener('touchstart', initAudio, { once: true });
-
-  function playHoverSound() {
-    if (!audioCtx || audioCtx.state === 'suspended') return;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(1000, audioCtx.currentTime + 0.05);
-    gain.gain.setValueAtTime(0.012, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.1);
-  }
-
-  function playClickSound() {
-    initAudio();
-    if (!audioCtx || audioCtx.state === 'suspended') return;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = 'square';
-    osc.frequency.setValueAtTime(250, audioCtx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.15);
-    gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.15);
-  }
-
-  // ── CUSTOM NEON CURSOR & HERO PARALLAX ──
+  // ── CUSTOM CURSOR ──────────────────────────────────────────────
   const cur = document.getElementById('cur');
   const ring = document.getElementById('ring');
-  const heroInner = document.querySelector('.hero-inner');
-  let mx = 0, my = 0, rx = 0, ry = 0;
+  let mx = -200, my = -200;
 
   document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    
-    if (cur) {
-      cur.style.left = mx - 4 + 'px';
-      cur.style.top = my - 4 + 'px';
-    }
-
-    if (heroInner && window.scrollY < window.innerHeight) {
-      const x = (mx - window.innerWidth / 2) * -0.025;
-      const y = (my - window.innerHeight / 2) * -0.025;
-      heroInner.style.transform = `translate(${x}px, ${y}px)`;
-    }
+    mx = e.clientX; my = e.clientY;
+    if (cur) { cur.style.left = mx + 'px'; cur.style.top = my + 'px'; }
+    if (ring) { ring.style.left = mx + 'px'; ring.style.top = my + 'px'; }
   });
 
-  // Smooth ring follow loop
-  (function loopRing() {
-    if (ring) {
-      rx += (mx - rx - 23) * 0.12;
-      ry += (my - ry - 23) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-    }
-    requestAnimationFrame(loopRing);
-  })();
-
-  // Attach hover events to interactive nodes
-  function applyCursorHovers() {
-    document.querySelectorAll('a, button, .proj-card, .stat, .sk-cat, .btn, .lang-trigger, .lang-opt, .exp-card').forEach(el => {
-      // Avoid duplicate bindings
-      if (el.dataset.hoverBound) return;
-      el.dataset.hoverBound = 'true';
-
+  // Cursor scaling on interactive elements
+  function bindCursorHovers() {
+    document.querySelectorAll('a, button, .chip, .proj-list-item, .info-row, .exp-item, .filter-btn').forEach(el => {
+      if (el._cursorBound) return;
+      el._cursorBound = true;
       el.addEventListener('mouseenter', () => {
-        if (cur && ring) {
-          cur.style.transform = 'scale(2.2)';
-          cur.style.background = 'var(--mag)';
-          cur.style.boxShadow = '0 0 15px 4px var(--mag)';
-          ring.style.transform = 'scale(1.5)';
-          ring.style.borderColor = 'var(--mag)';
-        }
-        playHoverSound();
+        if (!ring) return;
+        ring.style.width = '52px';
+        ring.style.height = '52px';
+        ring.style.borderColor = 'rgba(56,189,248,.5)';
       });
-
       el.addEventListener('mouseleave', () => {
-        if (cur && ring) {
-          cur.style.transform = 'scale(1)';
-          cur.style.background = 'var(--cyan)';
-          cur.style.boxShadow = '0 0 15px 4px var(--cyan)';
-          ring.style.transform = 'scale(1)';
-          ring.style.borderColor = 'rgba(0,245,255,.3)';
-        }
-      });
-
-      el.addEventListener('click', () => {
-        playClickSound();
+        if (!ring) return;
+        ring.style.width = '36px';
+        ring.style.height = '36px';
+        ring.style.borderColor = 'rgba(255,255,255,.25)';
       });
     });
   }
-  applyCursorHovers();
-  
-  // Re-apply hover binds when DOM modifications happen (e.g. language load)
-  const observer = new MutationObserver(applyCursorHovers);
-  observer.observe(document.body, { childList: true, subtree: true });
+  bindCursorHovers();
+  new MutationObserver(bindCursorHovers).observe(document.body, { childList: true, subtree: true });
 
-  // ── DYNAMIC TYPEWRITER WITH LOCALIZATION LINK ──
-  let words = ['AI Engineer', 'Full-Stack Developer', 'IT Engineering Student', 'GenAI Enthusiast', 'UI Animation Nerd'];
-  let wi = 0, ci = 0, del = false;
+  // ── BACKGROUND GRID CANVAS ─────────────────────────────────────
+  const canvas = document.getElementById('bg-grid-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let W, H;
+
+    function resizeCanvas() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function drawGrid() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+      ctx.lineWidth = 1;
+
+      const step = 80;
+      ctx.beginPath();
+      for (let x = 0; x <= W; x += step) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, H);
+      }
+      for (let y = 0; y <= H; y += step) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+      }
+      ctx.stroke();
+    }
+
+    drawGrid();
+    window.addEventListener('resize', drawGrid);
+  }
+
+  // ── TYPEWRITER ─────────────────────────────────────────────────
+  let words = [
+    'Advanced RAG Systems',
+    'Agentic AI Workflows',
+    'LLM Applications',
+    'Full Stack Products',
+    'AWS Bedrock Solutions'
+  ];
+
+  let wi = 0, ci = 0, deleting = false;
   const typedEl = document.getElementById('typed');
 
-  function typewriterTick() {
+  function tick() {
     if (!typedEl) return;
     const w = words[wi];
-    typedEl.textContent = del ? w.slice(0, --ci) : w.slice(0, ++ci);
-    
-    if (!del && ci === w.length) {
-      del = true;
-      setTimeout(typewriterTick, 1500); // Wait at full word
-      return;
+    typedEl.textContent = deleting ? w.slice(0, --ci) : w.slice(0, ++ci);
+
+    if (!deleting && ci === w.length) {
+      deleting = true;
+      return setTimeout(tick, 2000);
     }
-    if (del && ci === 0) {
-      del = false;
+    if (deleting && ci === 0) {
+      deleting = false;
       wi = (wi + 1) % words.length;
     }
-    setTimeout(typewriterTick, del ? 40 : 80);
+    setTimeout(tick, deleting ? 30 : 70);
   }
-  typewriterTick();
+  tick();
 
-  // Register listener with i18n system to refresh words instantly on language swap
+  // Allow i18n to update typewriter words
   if (typeof window.onTypewriterWordsUpdate === 'function') {
-    window.onTypewriterWordsUpdate((localizedWords) => {
-      words = localizedWords;
-      wi = 0;
-      ci = 0;
-      del = false;
+    window.onTypewriterWordsUpdate(localizedWords => {
+      if (Array.isArray(localizedWords) && localizedWords.length) {
+        words = localizedWords;
+        wi = 0; ci = 0; deleting = false;
+      }
     });
   }
 
-  // ── SCROLL REVEAL ──
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('vis');
-        e.target.querySelectorAll('.sk-fill').forEach(b => {
-          setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 180);
-        });
+  // ── DOCK — LANGUAGE SELECTOR ───────────────────────────────────
+  const langBtn = document.getElementById('langBtn');
+  const langMenu = document.getElementById('langMenu');
+  const langCurrent = document.getElementById('langCurrent');
+
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      langMenu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', e => {
+      if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.remove('open');
       }
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => revealObserver.observe(el));
 
-  // Skills fill trigger backup
-  const skillsSec = document.getElementById('skills');
-  if (skillsSec) {
-    const skillsObserver = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        document.querySelectorAll('.sk-fill').forEach(b => {
-          setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 200);
-        });
-      }
-    }, { threshold: 0.1 });
-    skillsObserver.observe(skillsSec);
+    langMenu.querySelectorAll('.lang-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const lang = item.dataset.lang;
+        langMenu.querySelectorAll('.lang-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        if (langCurrent) langCurrent.textContent = lang.toUpperCase();
+        langMenu.classList.remove('open');
+
+        // Trigger i18n change if available
+        if (typeof window.setLocale === 'function') window.setLocale(lang);
+      });
+    });
   }
 
-  // ── ACTIVE NAV LINK ON SCROLL ──
+  // ── DOCK — MOBILE BURGER ───────────────────────────────────────
+  const burger = document.getElementById('dockBurger');
+  const dockMid = document.getElementById('dock-mid');
+
+  if (burger && dockMid) {
+    burger.addEventListener('click', e => {
+      e.stopPropagation();
+      dockMid.classList.toggle('open');
+    });
+
+    document.addEventListener('click', e => {
+      if (!burger.contains(e.target) && !dockMid.contains(e.target)) {
+        dockMid.classList.remove('open');
+      }
+    });
+
+    dockMid.querySelectorAll('.dock-link').forEach(link => {
+      link.addEventListener('click', () => dockMid.classList.remove('open'));
+    });
+  }
+
+  // ── DOCK — ACTIVE LINK ON SCROLL ──────────────────────────────
   const sections = [...document.querySelectorAll('section[id]')];
-  const navLinks = [...document.querySelectorAll('.nav-links a')];
+  const dockLinks = [...document.querySelectorAll('.dock-link')];
 
   window.addEventListener('scroll', () => {
-    if (isTransitioning) return;
-    let currentSectionId = '';
-    const scrollPos = window.scrollY;
-
+    let current = '';
+    const y = window.scrollY + 120;
     sections.forEach(s => {
-      if (scrollPos >= s.offsetTop - 150) {
-        currentSectionId = s.id;
-      }
+      if (y >= s.offsetTop) current = s.id;
     });
-
-    navLinks.forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === '#' + currentSectionId) {
-        a.style.color = 'var(--cyan)';
-      } else {
-        a.style.color = '';
-      }
+    dockLinks.forEach(a => {
+      a.classList.toggle('active-link', a.getAttribute('href') === '#' + current);
     });
   }, { passive: true });
 
-  // ── CONTACT FORM BUTTON FEEDBACK ──
+  // ── PROJECT FILTERING ──────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('[data-category]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const f = btn.dataset.filter;
+
+      projectItems.forEach(item => {
+        const cats = (item.dataset.category || '').split(' ');
+        if (f === 'all' || cats.includes(f)) {
+          item.classList.remove('hidden-card');
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          item.style.transition = 'opacity .4s ease, transform .4s ease';
+          requestAnimationFrame(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          });
+        } else {
+          item.classList.add('hidden-card');
+        }
+      });
+    });
+  });
+
+  // ── SCROLL REVEAL ──────────────────────────────────────────────
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.06 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── CONTACT FORM ───────────────────────────────────────────────
+  const form = document.getElementById('contactForm');
   const sendBtn = document.getElementById('sendBtn');
-  if (sendBtn) {
-    sendBtn.addEventListener('click', function() {
-      this.textContent = 'Message Sent ✓';
-      this.style.background = 'var(--grn)';
-      this.style.color = 'var(--bg)';
-      this.style.borderColor = 'var(--grn)';
-      this.style.boxShadow = '0 0 30px rgba(57,255,20,.4)';
+
+  if (form && sendBtn) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      sendBtn.textContent = 'Message Sent ✓';
+      sendBtn.style.background = '#22c55e';
+      sendBtn.style.color = '#fff';
       setTimeout(() => {
-        this.textContent = window.translate('contact.btn_send') || 'Send Message →';
-        this.style.cssText = '';
-      }, 3200);
+        sendBtn.textContent = 'Send Message →';
+        sendBtn.style.background = '';
+        sendBtn.style.color = '';
+        form.reset();
+      }, 3500);
     });
   }
 
-  // ── 3D INTEGRATED TILT MATRIX ──
-  document.querySelectorAll('.proj-card, .stat, .sk-cat, .exp-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      // Calculate rotation angles
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-      card.style.transition = 'transform 0.08s ease-out';
+  // ── HERO NAME HOVER PARALLAX ───────────────────────────────────
+  const heroName = document.querySelector('.hero-name');
+  if (heroName) {
+    document.addEventListener('mousemove', e => {
+      const px = (e.clientX / window.innerWidth - 0.5) * 8;
+      const py = (e.clientY / window.innerHeight - 0.5) * 4;
+      heroName.style.transform = `translate(${px}px, ${py}px)`;
     });
+  }
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-      card.style.transition = 'transform 0.4s ease-out';
-    });
-  });
-
-  // ── MAGNETIC UTILITY FOR HERO BUTTONS ──
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * 0.28}px, ${y * 0.28}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0px, 0px)';
-    });
-  });
-
-  // ── SIMPLE COLOR WIPE PAGE TRANSITION ENGINE ──
-  const tOverlay = document.getElementById('transition-overlay');
-  let isTransitioning = false;
-  
-  window.triggerTransition = function(midpointCallback) {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    
-    if (tOverlay) {
-      tOverlay.style.animation = 'none';
-      tOverlay.offsetHeight; // force DOM reflow
-      tOverlay.classList.add('active');
-    }
-    
-    // Call state update at midpoint of swipe
-    setTimeout(() => {
-      if (typeof midpointCallback === 'function') {
-        midpointCallback();
+  // ── DOCK SCROLL EFFECT ─────────────────────────────────────────
+  const dock = document.getElementById('dock');
+  if (dock) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        dock.style.boxShadow = '0 8px 40px rgba(0,0,0,.7), 0 0 60px rgba(56,189,248,.08)';
+      } else {
+        dock.style.boxShadow = '';
       }
-    }, 750);
-    
-    // End transition
-    setTimeout(() => {
-      isTransitioning = false;
-      if (tOverlay) {
-        tOverlay.classList.remove('active');
-      }
-    }, 1500);
-  };
+    }, { passive: true });
+  }
 
-  // Wire up transition on nav page anchor links
-  document.querySelectorAll('.nav-links a, .hero-btns a').forEach(link => {
-    link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href');
-      if (targetId.startsWith('#')) {
-        e.preventDefault();
-        
-        window.triggerTransition(() => {
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            window.scrollTo({
-              top: targetSection.offsetTop,
-              behavior: 'instant'
-            });
-          }
-        });
-      }
-    });
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMainApp);
-} else {
-  initMainApp();
-}
+})();

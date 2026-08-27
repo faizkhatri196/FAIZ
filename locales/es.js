@@ -1,83 +1,96 @@
 window.locale_es = {
   "nav": {
-    "logo": "< FAIZPORT />",
-    "about": "Sobre mí",
-    "experience": "Experiencia",
-    "skills": "Habilidades",
-    "projects": "Proyectos",
-    "contact": "Contacto"
+    "logo": "FAIZ KHATRI",
+    "about": "SOBRE MÍ",
+    "capabilities": "ÍNDICE",
+    "skills": "HABILIDADES",
+    "work": "PROYECTOS",
+    "timeline": "EXPERIENCIA",
+    "contact": "CONTACTO",
+    "github": "GITHUB ↗"
   },
   "hero": {
-    "badge": "// SISTEMA ACTIVO  ·  ESTUDIANTE DE INGENIERÍA DE TI  ·  DISPONIBLE PARA PASANTÍAS",
-    "name": "FAIZ KHATRI",
+    "num": "2026 / PORTAFOLIO",
+    "title_first": "FAIZ",
+    "title_last": "KHATRI",
+    "role": "INGENIERO DE IA / FULL STACK",
+    "statement": "Construyo aplicaciones inteligentes, productos full-stack y sistemas prácticos de IA impulsados por Advanced RAG, Agentic AI y AWS Bedrock.",
     "typewriter": [
-      "Ingeniero de IA",
-      "Desarrollador Full-Stack",
-      "Estudiante de Ingeniería de TI",
-      "Entusiasta de GenAI",
-      "Apasionado de la Animación UI"
+      "Ingeniero de IA y Full Stack",
+      "Especialista en Advanced RAG",
+      "Desarrollador de IA Agéntica",
+      "Arquitecto de Aplicaciones LLM",
+      "Desarrollador en AWS Bedrock"
     ],
-    "view_projects": "Ver Proyectos",
-    "contact_me": "Contacto",
-    "download_resume": "Descargar Currículum",
-    "scroll": "DESPLAZAR"
+    "view_work": "VER PROYECTOS →",
+    "lets_connect": "CONTACTAR →",
+    "download_resume": "CURRÍCULUM ↓"
   },
-  "about": {
-    "title": "Sobre mí",
-    "p1": "Hola — Soy un <em>desarrollador apasionado</em> y <em>estudiante de Ingeniería de TI</em> que convierte problemas complejos en experiencias digitales limpias, rápidas y animadas. Comencé con las Herramientas de Desarrollo del navegador y demasiadas noches de insomnio. Ahora construyo <em>aplicaciones full-stack</em> (y también estoy muy interesado en DSA y LeetCode) que a los usuarios realmente les encantan.",
-    "p2": "Mi punto fuerte es la intersección entre el <em>rigor de la ingeniería</em> y la <em>interfaz de usuario creativa</em>. Ya sea diseñando una API REST o perfeccionando una microanimación, me preocupo por cada capa de la pila.",
-    "p3": "Actualmente estudiando duro, lanzando proyectos personales y buscando activamente <em>pasantías y colaboraciones en el mundo real</em>. Construyamos algo genial.",
-    "stat_projects": "PROYECTOS",
-    "stat_coding": "AÑOS PROGRAMANDO",
-    "stat_curiosity": "CURIOSITY",
-    "code_comment": "// Siempre aprendiendo. Siempre creando."
+  "intro": {
+    "num": "02 / SOBRE MÍ",
+    "headline": "Me gusta construir software donde la ingeniería de producto se encuentra con la IA práctica.",
+    "p1": "Soy Faiz Khatri, un <strong>estudiante de 5.º semestre de Ingeniería en TI (8.55 SPI)</strong> e <strong>Ingeniero de IA / Full Stack</strong> radicado en la India. Me especializo en el desarrollo de productos web de alto rendimiento y arquitecturas de IA con <strong>Advanced RAG</strong>, <strong>IA Agéntica</strong> y <strong>AWS Bedrock</strong>.",
+    "p2": "Mi metodología se centra en el rigor del código, la tipografía moderna y la inteligencia de máquina aplicada.",
+    "edu_title": "EDUCACIÓN",
+    "edu_school": "GTU",
+    "edu_degree": "Ingeniería en Tecnologías de la Información",
+    "focus_title": "ENFOQUE",
+    "focus_body": "Sistemas de IA y Software Full Stack",
+    "focus_sub": "Advanced RAG, IA Agéntica y Aplicaciones Web",
+    "current_title": "NUBE / IA",
+    "current_body": "AWS Bedrock y Orquestación LLM",
+    "current_sub": "Python, Node.js, React y Next.js"
+  },
+  "build": {
+    "num": "03 / CAPACIDADES",
+    "title": "CAPACIDADES DE INGENIERÍA",
+    "c1_title": "APLICACIONES IMPULSADAS POR IA",
+    "c1_desc": "Diseño de aplicaciones integradas con LLMs, inyección de contexto y flujos de trabajo estructurados.",
+    "c2_title": "SISTEMAS DE ADVANCED RAG",
+    "c2_desc": "Construcción de aplicaciones de recuperación con transformación de consultas, filtrado, reordenamiento y optimización de contexto.",
+    "c3_title": "APLICACIONES DE IA AGÉNTICA",
+    "c3_desc": "Desarrollo de aplicaciones inteligentes con razonamiento, llamadas a herramientas y flujos de trabajo de múltiples pasos.",
+    "c4_title": "PRODUCTOS FULL STACK",
+    "c4_desc": "Construcción de aplicaciones web adaptables en frontends React/Next.js y backends Node.js/Python."
+  },
+  "skills": {
+    "num": "04 / MATRIZ DE HABILIDADES",
+    "title": "ÍNDICE DE TECNOLOGÍA Y HABILIDADES",
+    "ai_llm": "IA / LLM",
+    "frontend": "FRONTEND",
+    "backend": "BACKEND",
+    "programming": "PROGRAMACIÓN",
+    "cloud": "NUBE / IA"
+  },
+  "projects": {
+    "num": "05 / TRABAJO SELECCIONADO",
+    "title": "TRABAJO SELECCIONADO",
+    "subtitle": "Proyectos destacados en ingeniería de IA y desarrollo full-stack.",
+    "filter_all": "TODOS LOS PROYECTOS",
+    "filter_ai": "IA Y RAG",
+    "filter_fullstack": "FULL STACK",
+    "filter_web": "WEB",
+    "view_project": "VER DEMO ↗",
+    "github": "GITHUB ↗"
   },
   "experience": {
-    "title": "Experiencia",
+    "num": "06 / EXPERIENCIA",
+    "title": "EXPERIENCIA LABORAL",
     "sysslan_role": "Desarrollador Full Stack",
     "sysslan_company": "Sysslan IT Solutions",
     "sysslan_date": "Julio 2026 – Agosto 2026",
-    "sysslan_p1": "Trabajar como Desarrollador Full Stack construyendo aplicaciones web de extremo a extremo, cubriendo capas front-end (React.js), back-end (Node.js) y base de datos.",
-    "sysslan_p2": "Servir como organizador de eventos para eventos tecnológicos de la empresa, coordinando la planificación, logística y ejecución junto con las responsabilidades de desarrollo.",
-    "sysslan_p3": "Liderar el despliegue de aplicaciones web de extremo a extremo, desde el desarrollo y pruebas hasta el lanzamiento a producción, garantizando implementaciones fluidas y confiables.",
-    "upwork_role": "Desarrollador Web y de IA Freelance",
+    "upwork_role": "Desarrollador Web e IA Freelance",
     "upwork_company": "Upwork",
-    "upwork_date": "2024 – Ago 2025",
-    "upwork_p1": "Entregó más de 5 proyectos independientes que abarcan aplicaciones web full-stack y paneles integrados con IA, manteniendo altas calificaciones de satisfacción del cliente.",
-    "upwork_p2": "Redujo la carga de trabajo de entrada de datos manual del cliente en un ~40% a través de una tubería de Python automatizada integrada con un front-end de React.js.",
-    "upwork_p3": "Construyó interfaces adaptables y preparadas para dispositivos móviles que redujeron el tiempo promedio de carga de la página en un 30% mediante optimizaciones de rendimiento específicas.",
-    "upwork_p4": "Colaboró con clientes internacionales en diferentes zonas horarias, convirtiendo informes ambiguos en entregables pulidos y listos para producción a tiempo."
-  },
-  "skills": {
-    "title": "Tecnologías",
-    "frontend": "// Frontend",
-    "backend": "// Backend",
-    "ai_ml": "// IA y Aprendizaje Automático",
-    "tools": "// Herramientas y SO"
-  },
-  "projects": {
-    "title": "Proyectos",
-    "p1_desc": "Un sistema avanzado de orientación profesional que aprovecha LLMs, RAG y LangChain para brindar información profesional inteligente y personalizada.",
-    "p2_desc": "Plataforma de predicción de precios de viviendas con IA de próxima generación con visualización 3D interactiva de bienes raíces y análisis de mercado.",
-    "p3_desc": "Guía de viajes mundial con información visual detallada y dinámica.",
-    "p4_desc": "Un asistente meteorológico inteligente que aprovecha la IA Agéntica para analizar escenarios en tiempo real y proporcionar recomendaciones de actividades personalizadas.",
-    "p5_desc": "Un modelo de copiloto de entrevista impulsado por IA para ayudar a estudiantes a dominar entrevistas técnicas.",
-    "p6_desc": "Plataforma de inteligencia de ubicación para la gestión de infraestructura urbana y análisis de ciudades inteligentes."
+    "upwork_date": "2024 – Agosto 2025"
   },
   "contact": {
-    "title": "Contacto",
-    "heading": "Construyamos Algo.",
-    "p": "Busco activamente pasantías, trabajos independientes y colaboraciones de código abierto. Si tienes un proyecto en mente — o simplemente quieres hablar de tecnología — escríbeme.",
-    "label_name": "Nombre",
-    "label_email": "Correo electrónico",
-    "label_msg": "Mensaje",
-    "placeholder_name": "tu nombre",
-    "placeholder_email": "nombre@ejemplo.com",
-    "placeholder_msg": "Hola, trabajemos juntos...",
-    "btn_send": "Enviar Mensaje →"
+    "num": "07 / CONTACTO",
+    "heading": "CONSTRUYAMOS ALGO ÚTIL.",
+    "sub": "¿Interesado en sistemas de IA, ingeniería web full-stack o desarrollo de productos? Contáctame.",
+    "btn_send": "ENVIAR MENSAJE →"
   },
   "footer": {
-    "built_by": "DISEÑADO Y CONSTRUIDO POR <em>FAIZ KHATRI</em> &nbsp;·&nbsp; <em>2025</em>",
-    "note": "// creado con pasión y cafeína ☕"
+    "brand": "FAIZ KHATRI · INGENIERO DE IA / FULL STACK",
+    "copy": "© 2026 Faiz Khatri. Todos los derechos reservados."
   }
 };
