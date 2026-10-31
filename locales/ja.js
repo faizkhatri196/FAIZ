@@ -1,11 +1,11 @@
 window.locale_ja = {
   "nav": {
-    "about": "概要",
-    "capabilities": "対応領域",
+    "about": "マニフェスト",
+    "capabilities": "領域",
     "work": "実績",
     "expertise": "専門分野",
     "experience": "職歴",
-    "achievements": "実績・成果",
+    "education": "学術",
     "contact": "連絡先",
     "resume": "履歴書",
     "github": "GitHub"
@@ -13,7 +13,7 @@ window.locale_ja = {
   "preloader": {
     "title": "FAIZ KHATRI",
     "status": "コアエンジンの初期化中...",
-    "ready": "システム準備完了"
+    "ready": "システムオンライン"
   },
   "hero": {
     "eyebrow": "SOFTWARE ENGINEER // AI SYSTEMS ARCHITECT // GUJARAT, INDIA",
@@ -22,26 +22,26 @@ window.locale_ja = {
     "typewriter": [
       "エージェンティック AI ワークフロー",
       "Advanced RAG アーキテクチャ",
-      "AI決済セキュリティ & ガードレール",
+      "PayPal AI 決済ガードレール",
       "AWS Bedrock オーケストレーション",
       "スケーラブルなフルスタック製品"
     ],
-    "statement": "<strong>AWS Bedrock、Python、最新Web技術</strong>を駆使し、本番環境レベルの<strong>エージェンティックAI</strong>や<strong>Advanced RAGシステム</strong>、堅牢な知的ソフトウェアを設計・構築。インド・グジャラート州在住。",
+    "statement": "<strong>AWS Bedrock、Python、最新Web技術</strong>を駆使し、本番環境仕様の<strong>エージェンティックAI</strong>や<strong>Advanced RAGシステム</strong>、堅牢な知的ソフトウェアを設計・構築。インド・グジャラート州在住。",
     "status_badge": "高難度案件・チーム参画受付中",
     "btn_work": "実績を見る ↓",
     "btn_resume": "履歴書 ↗",
     "btn_contact": "お問い合わせ →",
-    "scroll": "スクロールして探索"
+    "scroll": "スクロール"
   },
   "about": {
     "sec_num": "01",
-    "sec_title": "概要",
+    "sec_title": "マニフェスト",
     "headline": "機械知能と本番環境の精密エンジニアリングが交差するソフトウェアを設計・実装します。",
     "body1": "インド・グジャラート州を拠点とする<strong>ソフトウェアエンジニア、AIエンジニア、フルスタックデベロッパー</strong>の Faiz Khatri です。自律型エージェントワークフロー、本番環境仕様の Advanced RAG アーキテクチャ、そして <strong>AWS Bedrock</strong>、<strong>Python</strong>、<strong>LangGraph</strong>、<strong>React</strong> をベースにした拡張性の高い Web システムの開発を専門としています。",
     "body2": "表面的なラッパーではなく、検証可能なエージェント推論、低遅延セマンティック検索、美しいアーキテクチャ境界、そして実社会での実用的価値を最重視しています。",
     "btn_talk": "対話を開始する →",
     "info_edu_k": "学歴",
-    "info_edu_v1": "情報技術学士 (B.E.)",
+    "info_edu_v1": "情報技術学士 (B.E. in IT)",
     "info_edu_v2": "グジャラート工科大学 (GEC Modasa)",
     "info_focus_k": "中核専門分野",
     "info_focus_v1": "Agentic AI & Advanced RAG",
@@ -67,15 +67,13 @@ window.locale_ja = {
     "sec_num": "03",
     "sec_title": "実績一覧",
     "heading": "主要 <em>プロジェクト</em>",
-    "subheading": "実用性、高パフォーマンス、堅牢なアーキテクチャを備えたプロダクト群。",
+    "subheading": "検証済みソフトウェア製品、自律型 AI システム、インタラクティブ WebGL 表現の厳選ショーケース。",
     "filter_all": "すべて",
     "filter_ai": "AI & エージェント",
     "filter_fullstack": "フルスタック",
     "filter_web": "Web & ツール",
     "p_agentshield_title": "AgentShield — AI決済セキュリティ",
     "p_agentshield_desc": "PayPal AIエージェント向けのAI決済セキュリティおよびガードレール基盤。プロンプトインジェクションや不正トランザクションを未然に遮断。",
-    "p1_title": "LinkedIn Profile JSON Fetcher",
-    "p1_desc": "公開 LinkedIn プロフィールをリアルタイムに自動解析し、クリーンな JSON データとして取得できる REST API および抽出ツール。",
     "p2_title": "AI Career Intelligence System",
     "p2_desc": "LLM、RAG パイプライン、LangChain を駆使し、個別最適化されたキャリアインサイトとロードマップを自動生成するプラットフォーム。",
     "p3_title": "AI Copilot Interview Platform",
@@ -102,7 +100,7 @@ window.locale_ja = {
   "exp": {
     "sec_num": "05",
     "sec_title": "職務経歴",
-    "heading": "実務 <em>経験</em>",
+    "heading": "実務 <em>経歴</em>",
     "item1_year": "2026年7月 — 2026年8月",
     "item1_company": "Sysslan IT Solutions",
     "item1_role": "Full Stack & AI Developer",
@@ -112,8 +110,16 @@ window.locale_ja = {
     "item2_role": "Freelance AI & Web Engineer",
     "item2_desc": "Python 自動化ワークフロー、低遅延 RAG アシスタント、リアルタイムダッシュボードなど、5 件以上のクライアント案件を完遂。"
   },
-  "achieve": {
+  "edu": {
     "sec_num": "06",
+    "sec_title": "学問的基盤",
+    "heading": "学問的 <em>基盤</em>",
+    "title": "グジャラート工科大学 (GTU)",
+    "degree": "情報技術工学士 (B.E. in IT)",
+    "meta": "GEC Modasa · インド・グジャラート州"
+  },
+  "achieve": {
+    "sec_num": "07",
     "sec_title": "成果",
     "heading": "主な <em>実績・表彰</em>",
     "a1_title": "AI & オープンソースハッカソン",
@@ -122,14 +128,6 @@ window.locale_ja = {
     "a2_desc": "国際的な要件基準を満たす高可用性 AI & フルスタック案件を 5 件以上成功裏にローンチ。",
     "a3_title": "競技プログラミング・アルゴリズム",
     "a3_desc": "LeetCode においてデータ構造、グラフ探索、動的計画法などの問題解決を継続的に実践。"
-  },
-  "edu": {
-    "sec_num": "07",
-    "sec_title": "学問的基盤",
-    "heading": "学術的 <em>背景</em>",
-    "title": "グジャラート工科大学 (GTU)",
-    "degree": "情報技術学士 (B.E. in IT)",
-    "meta": "GEC Modasa · インド・グジャラート州"
   },
   "contact": {
     "sec_num": "08",

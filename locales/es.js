@@ -1,11 +1,11 @@
 window.locale_es = {
   "nav": {
-    "about": "Sobre Mí",
-    "capabilities": "Capacidades",
+    "about": "Manifiesto",
+    "capabilities": "Disciplinas",
     "work": "Proyectos",
     "expertise": "Especialización",
-    "experience": "Experiencia",
-    "achievements": "Logros",
+    "experience": "Historial",
+    "education": "Academia",
     "contact": "Contacto",
     "resume": "Currículum",
     "github": "GitHub"
@@ -13,35 +13,35 @@ window.locale_es = {
   "preloader": {
     "title": "FAIZ KHATRI",
     "status": "INICIALIZANDO MOTORES DEL SISTEMA...",
-    "ready": "SISTEMA LISTO"
+    "ready": "SISTEMA ONLINE"
   },
   "hero": {
     "eyebrow": "INGENIERO DE SOFTWARE // SISTEMAS DE IA // GUJARAT, INDIA",
     "role": "SOFTWARE ENGINEER | AI ENGINEER | FULL STACK DEVELOPER",
-    "tw_pre": "Ingeniería →",
+    "tw_pre": "Sintetizando →",
     "typewriter": [
       "Flujos de IA Agéntica",
       "Arquitecturas Advanced RAG",
-      "Seguridad de Pagos IA y Guardrails",
+      "Guardrails de Pago PayPal AI",
       "Orquestación en AWS Bedrock",
-      "Productos Full Stack Escalables"
+      "Sistemas Full-Stack Escalables"
     ],
-    "statement": "Arquitectando <strong>flujos de IA Agéntica</strong>, <strong>sistemas Advanced RAG</strong> y software inteligente de alto rendimiento con <strong>AWS Bedrock, Python y tecnologías web modernas</strong>. Con sede en Gujarat, India.",
-    "status_badge": "DISPONIBLE PARA ROLES DE ALTO IMPACTO",
+    "statement": "Arquitectando <strong>flujos de IA Agéntica</strong>, <strong>sistemas Advanced RAG</strong> y productos digitales de alto rendimiento con <strong>AWS Bedrock, Python y tecnologías web modernas</strong>. Con sede en Gujarat, India.",
+    "status_badge": "DISPONIBLE PARA IMPACTO GLOBAL",
     "btn_work": "Ver Proyectos ↓",
     "btn_resume": "Currículum ↗",
     "btn_contact": "Iniciar Contacto →",
-    "scroll": "EXPLORAR SISTEMA"
+    "scroll": "DESCUBRIR"
   },
   "about": {
     "sec_num": "01",
-    "sec_title": "Sobre Mí",
+    "sec_title": "Manifiesto",
     "headline": "Diseño software donde la <em>inteligencia artificial</em> se une a la <em>precisión de producción.</em>",
     "body1": "Soy Faiz Khatri, un <strong>Ingeniero de Software, Ingeniero de IA y Desarrollador Full Stack</strong> basado en Gujarat, India. Me especializo en diseñar flujos agénticos autónomos, arquitecturas Advanced RAG listas para producción y sistemas web escalables impulsados por <strong>AWS Bedrock</strong>, <strong>Python</strong>, <strong>LangGraph</strong> y <strong>React</strong>.",
     "body2": "Mi filosofía de ingeniería prioriza el razonamiento verificable de los agentes, la recuperación semántica de baja latencia, límites arquitectónicos limpios y utilidad práctica en el mundo real.",
     "btn_talk": "Hablemos →",
     "info_edu_k": "Educación",
-    "info_edu_v1": "Grado en Ingeniería en Tecnologías de la Información",
+    "info_edu_v1": "Grado en Tecnologías de la Información",
     "info_edu_v2": "Universidad Tecnológica de Gujarat (GEC Modasa)",
     "info_focus_k": "Disciplina Principal",
     "info_focus_v1": "IA Agéntica y Advanced RAG",
@@ -53,7 +53,7 @@ window.locale_es = {
   "cap": {
     "sec_num": "02",
     "sec_title": "Disciplinas Principales",
-    "heading": "CAPACIDADES DE <em>INGENIERÍA</em>",
+    "heading": "DISCIPLINAS DE <em>INGENIERÍA</em>",
     "c1_title": "Flujos de IA Agéntica",
     "c1_desc": "Arquitecturas de agentes autónomos con llamadas dinámicas a herramientas, gestión de memoria y grafos de estado con LangGraph.",
     "c2_title": "Sistemas Advanced RAG",
@@ -66,16 +66,14 @@ window.locale_es = {
   "projects": {
     "sec_num": "03",
     "sec_title": "Proyectos Seleccionados",
-    "heading": "PROYECTOS <em>DESTACADOS</em>",
-    "subheading": "Sistemas diseñados con propósito real, alto rendimiento y arquitecturas robustas.",
+    "heading": "SHOWCASE DE <em>PROYECTOS</em>",
+    "subheading": "Un portafolio curado de productos de software verificados, sistemas de IA autónomos y arquitectura interactiva.",
     "filter_all": "Todos",
     "filter_ai": "IA y Agentes",
     "filter_fullstack": "Full Stack",
     "filter_web": "Web y Herramientas",
     "p_agentshield_title": "AgentShield — Seguridad en Pagos IA",
     "p_agentshield_desc": "Arquitectura de seguridad y guardrails impulsada por IA para agentes de PayPal AI, previniendo inyecciones de prompts y transacciones no autorizadas.",
-    "p1_title": "LinkedIn Profile JSON Fetcher",
-    "p1_desc": "Herramienta automatizada de extracción y API REST que analiza perfiles públicos de LinkedIn en formato JSON estructurado en tiempo real.",
     "p2_title": "AI Career Intelligence System",
     "p2_desc": "Plataforma avanzada de orientación profesional basada en LLMs, pipelines RAG y LangChain, generando hojas de ruta personalizadas.",
     "p3_title": "AI Copilot Interview Platform",
@@ -102,7 +100,7 @@ window.locale_es = {
   "exp": {
     "sec_num": "05",
     "sec_title": "Historial Profesional",
-    "heading": "EXPERIENCIA <em>PROFESIONAL</em>",
+    "heading": "HISTORIAL <em>PROFESIONAL</em>",
     "item1_year": "Jul 2026 — Ago 2026",
     "item1_company": "Sysslan IT Solutions",
     "item1_role": "Full Stack & AI Developer",
@@ -112,10 +110,18 @@ window.locale_es = {
     "item2_role": "Freelance AI & Web Engineer",
     "item2_desc": "Entrega exitosa de más de 5 proyectos para clientes desarrollando automatizaciones en Python, asistentes RAG y paneles analíticos de baja latencia."
   },
-  "achieve": {
+  "edu": {
     "sec_num": "06",
+    "sec_title": "Formación Académica",
+    "heading": "BASE <em>ACADÉMICA</em>",
+    "title": "Universidad Tecnológica de Gujarat",
+    "degree": "Grado en Tecnologías de la Información",
+    "meta": "GEC Modasa · Gujarat, India"
+  },
+  "achieve": {
+    "sec_num": "07",
     "sec_title": "Reconocimientos",
-    "heading": "LOGROS Y <em>HITOS</em>",
+    "heading": "HONORES Y <em>HITOS</em>",
     "a1_title": "Hackathons de IA y Código Abierto",
     "a1_desc": "Desarrollo y demostración de flujos agénticos avanzados y prototipos de analítica urbana bajo restricciones competitivas.",
     "a2_title": "Entregas a Clientes en Producción",
@@ -123,23 +129,15 @@ window.locale_es = {
     "a3_title": "Resolución de Problemas Algorítmicos",
     "a3_desc": "Programador activo en LeetCode dominando estructuras de datos, algoritmos complejos, recorridos de grafos y programación dinámica."
   },
-  "edu": {
-    "sec_num": "07",
-    "sec_title": "Formación Académica",
-    "heading": "BASE <em>ACADÉMICA</em>",
-    "title": "Universidad Tecnológica de Gujarat",
-    "degree": "Grado en Ingeniería en Tecnologías de la Información",
-    "meta": "GEC Modasa · Gujarat, India"
-  },
   "contact": {
     "sec_num": "08",
     "sec_title": "Contacto",
-    "heading": "CONSTRUYAMOS ALGO <em>EXCEPCIONAL.</em>",
+    "heading": "CONSTRUYAMOS ALGO <em>EXTRAORDINARIO.</em>",
     "body": "¿Tienes un proyecto ambicioso de IA, un desafío de ingeniería full stack o una propuesta de colaboración? Escríbeme directamente.",
     "form_name": "Tu Nombre",
     "form_email": "Tu Correo Electrónico",
     "form_msg": "Detalles del Proyecto o Mensaje",
-    "btn_send": "Enviar Mensaje →",
+    "btn_send": "Enviar Transmisión →",
     "copied": "¡Copiado al portapapeles!"
   },
   "footer": {

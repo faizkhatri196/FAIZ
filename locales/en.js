@@ -1,11 +1,11 @@
 window.locale_en = {
   "nav": {
-    "about": "About",
-    "capabilities": "Capabilities",
+    "about": "Manifesto",
+    "capabilities": "Disciplines",
     "work": "Selected Work",
     "expertise": "Expertise",
-    "experience": "Experience",
-    "achievements": "Achievements",
+    "experience": "History",
+    "education": "Academy",
     "contact": "Contact",
     "resume": "Resume",
     "github": "GitHub"
@@ -13,29 +13,29 @@ window.locale_en = {
   "preloader": {
     "title": "FAIZ KHATRI",
     "status": "INITIALIZING CORE ENGINES...",
-    "ready": "SYSTEM READY"
+    "ready": "SYSTEM ONLINE"
   },
   "hero": {
     "eyebrow": "SOFTWARE ENGINEER // AI SYSTEMS ARCHITECT // GUJARAT, INDIA",
     "role": "SOFTWARE ENGINEER | AI ENGINEER | FULL STACK DEVELOPER",
-    "tw_pre": "Engineering →",
+    "tw_pre": "Synthesizing →",
     "typewriter": [
       "Agentic AI Workflows",
       "Advanced RAG Architectures",
-      "AI Payment Security & Guardrails",
+      "PayPal AI Payment Guardrails",
       "AWS Bedrock Orchestration",
-      "Scalable Full Stack Products"
+      "Scalable Full-Stack Systems"
     ],
-    "statement": "Architecting production-ready <strong>Agentic AI workflows</strong>, <strong>Advanced RAG systems</strong>, and high-performance intelligent software with <strong>AWS Bedrock, Python & Modern Web Stacks</strong>. Based in Gujarat, India.",
-    "status_badge": "AVAILABLE FOR HIGH-IMPACT ROLES",
-    "btn_work": "Selected Work ↓",
+    "statement": "Architecting production-ready <strong>Agentic AI workflows</strong>, <strong>Advanced RAG systems</strong>, and high-performance digital products with <strong>AWS Bedrock, Python & Modern Web Stacks</strong>. Based in Gujarat, India.",
+    "status_badge": "AVAILABLE FOR GLOBAL IMPACT",
+    "btn_work": "Explore Works ↓",
     "btn_resume": "Resume ↗",
     "btn_contact": "Initiate Contact →",
-    "scroll": "EXPLORE SYSTEM"
+    "scroll": "DISCOVER"
   },
   "about": {
     "sec_num": "01",
-    "sec_title": "About",
+    "sec_title": "Manifesto",
     "headline": "Engineering software where <em>machine intelligence</em> meets <em>production precision.</em>",
     "body1": "I am Faiz Khatri, a <strong>Software Engineer, AI Engineer & Full Stack Developer</strong> based in Gujarat, India. I specialize in designing autonomous agentic workflows, production-ready Advanced RAG architectures, and scalable intelligent web systems powered by <strong>AWS Bedrock</strong>, <strong>Python</strong>, <strong>LangGraph</strong>, and <strong>React</strong>.",
     "body2": "My engineering philosophy prioritizes verifiable agent reasoning, low-latency semantic retrieval, clean architectural boundaries, and practical real-world utility over superficial wrappers.",
@@ -53,7 +53,7 @@ window.locale_en = {
   "cap": {
     "sec_num": "02",
     "sec_title": "Core Disciplines",
-    "heading": "ENGINEERING <em>CAPABILITIES</em>",
+    "heading": "ARCHITECTURAL <em>DISCIPLINES</em>",
     "c1_title": "Agentic AI Workflows",
     "c1_desc": "Multi-step autonomous agent architectures with dynamic tool calling, memory management, and structured LangGraph state execution.",
     "c2_title": "Advanced RAG Systems",
@@ -66,16 +66,14 @@ window.locale_en = {
   "projects": {
     "sec_num": "03",
     "sec_title": "Selected Work",
-    "heading": "SELECTED <em>PROJECTS</em>",
-    "subheading": "Every system engineered for real-world utility, high performance, and robust architecture.",
+    "heading": "FEATURED <em>SHOWCASE</em>",
+    "subheading": "A curated portfolio of verified software products, autonomous AI systems, and interactive architectures.",
     "filter_all": "All Works",
     "filter_ai": "AI & Agents",
     "filter_fullstack": "Full Stack",
     "filter_web": "Web & Tools",
     "p_agentshield_title": "AgentShield — AI Payment Security",
     "p_agentshield_desc": "AI-powered payment security and guardrails architecture for PayPal AI agents, preventing prompt injections, unauthorized transactions, and adversarial policy bypasses.",
-    "p1_title": "LinkedIn Profile JSON Fetcher",
-    "p1_desc": "An automated profile data extraction tool and REST API that fetches and parses public LinkedIn profiles into clean, structured JSON format in real-time.",
     "p2_title": "AI Career Intelligence System",
     "p2_desc": "Advanced career guidance platform using LLMs, RAG pipelines, and LangChain — delivering personalized professional insights and intelligent roadmap synthesis.",
     "p3_title": "AI Copilot Interview Platform",
@@ -102,7 +100,7 @@ window.locale_en = {
   "exp": {
     "sec_num": "05",
     "sec_title": "Work History",
-    "heading": "PROFESSIONAL <em>EXPERIENCE</em>",
+    "heading": "PROFESSIONAL <em>HISTORY</em>",
     "item1_year": "Jul 2026 — Aug 2026",
     "item1_company": "Sysslan IT Solutions",
     "item1_role": "Full Stack & AI Developer",
@@ -112,10 +110,18 @@ window.locale_en = {
     "item2_role": "Freelance AI & Web Engineer",
     "item2_desc": "Delivered 5+ client projects building automated Python AI workflows, RAG assistants, and interactive client dashboards with low latency."
   },
-  "achieve": {
+  "edu": {
     "sec_num": "06",
+    "sec_title": "Academic Foundation",
+    "heading": "ACADEMIC <em>FOUNDATION</em>",
+    "title": "Gujarat Technological University",
+    "degree": "B.E. Information Technology",
+    "meta": "GEC Modasa · Gujarat, India"
+  },
+  "achieve": {
+    "sec_num": "07",
     "sec_title": "Recognition",
-    "heading": "ACHIEVEMENTS & <em>MILESTONES</em>",
+    "heading": "HONORS & <em>MILESTONES</em>",
     "a1_title": "AI & Open Source Hackathons",
     "a1_desc": "Built and demonstrated advanced Agentic workflows and smart city intelligence prototypes under competitive constraints.",
     "a2_title": "Production Client Deliveries",
@@ -123,23 +129,15 @@ window.locale_en = {
     "a3_title": "Algorithmic Problem Solving",
     "a3_desc": "Active competitive programmer on LeetCode mastering data structures, algorithms, graph traversals, and dynamic programming."
   },
-  "edu": {
-    "sec_num": "07",
-    "sec_title": "Academic Foundation",
-    "heading": "ACADEMIC <em>FOUNDATION</em>",
-    "title": "Gujarat Technological University",
-    "degree": "B.E. in Information Technology",
-    "meta": "GEC Modasa · Gujarat, India"
-  },
   "contact": {
     "sec_num": "08",
     "sec_title": "Get In Touch",
-    "heading": "LET'S BUILD SOMETHING <em>EXCEPTIONAL.</em>",
+    "heading": "LET'S BUILD SOMETHING <em>EXTRAORDINARY.</em>",
     "body": "Interested in building cutting-edge AI systems, agentic workflows, or scalable web platforms? Feel free to reach out directly.",
     "form_name": "Your Name",
     "form_email": "Your Email",
     "form_msg": "Project or Inquiry Details",
-    "btn_send": "Send Message →",
+    "btn_send": "Dispatch Transmission →",
     "copied": "Copied to Clipboard!"
   },
   "footer": {

@@ -1,11 +1,11 @@
-# Faiz Khatri — Software Engineer | AI Engineer | Full Stack Developer
+# Faiz Khatri — Software Engineer & AI Systems Architect
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-faizxcode.netlify.app-d4ff32?style=for-the-badge&logo=netlify&logoColor=black)](https://faizxcode.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-faizxcode.netlify.app-e8b931?style=for-the-badge&logo=netlify&logoColor=black)](https://faizxcode.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-faizkhatri196-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/faizkhatri196)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Faiz_Khatri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/faiz-khatri-1912ab344)
 [![LeetCode](https://img.shields.io/badge/LeetCode-faizkhatri196-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/faizkhatri196/)
 
-> **"Architecting production-ready Agentic AI workflows, Advanced RAG systems, and high-performance intelligent software with AWS Bedrock, Python, and modern web stacks."**
+> **"Architecting production-ready Agentic AI workflows, Advanced RAG systems, and high-performance digital products with AWS Bedrock, Python, and modern web stacks."**
 
 ---
 
@@ -17,18 +17,17 @@ I specialize in designing autonomous agentic workflows, production-ready Advance
 
 - 🔭 **Core Focus**: Agentic AI Workflows, Advanced RAG Architectures, LLM Tool Calling, AI Payment Security & Guardrails.
 - ☁️ **Cloud AI**: AWS Bedrock, Claude, Foundation Model Orchestration.
-- 🎓 **Education**: B.E. in Information Technology, Gujarat Technological University (GEC Modasa).
+- 🎓 **Education**: Gujarat Technological University · B.E. Information Technology · GEC Modasa.
 - 💬 **Ask me about**: LangGraph, Vector Databases, Semantic Search, Prompt Optimization, and Full Stack Architecture.
 - 📫 **Contact**: [faizkhatri1819@gmail.com](mailto:faizkhatri1819@gmail.com)
 
 ---
 
-## 🚀 Featured & Selected Projects
+## 🚀 Selected Projects Showcase
 
 | Project | Description | Tech Stack | Live Demo | Repository |
 | :--- | :--- | :--- | :---: | :---: |
 | **AgentShield** | AI-powered payment security and guardrails architecture for PayPal AI agents, preventing prompt injections and unauthorized transactions. | `Python` `LangGraph` `AI Security` `PayPal API` `FastAPI` | [Inquire ↗](https://faizxcode.netlify.app/#contact) | [GitHub ↗](https://github.com/faizkhatri196) |
-| **LinkedIn Profile JSON Fetcher** | Automated profile data extraction engine and REST API that fetches and parses public LinkedIn profiles into clean, structured JSON format in real-time. | `REST API` `JSON Parser` `React` `Node.js` `Express` | [Live Demo ↗](https://linkdin-profile-json-fatch.onrender.com/) | [GitHub ↗](https://github.com/faizkhatri196/Linkdin-Profile-JSON-fatch.git) |
 | **AI Career Intelligence System** | Advanced career guidance platform leveraging LLMs, RAG pipelines, and LangChain to provide personalized professional insights and roadmap synthesis. | `Advanced RAG` `LLMs` `LangChain` `Python` `Next.js` | [Live Demo ↗](https://ai-carrer-inteligence-4wrx3982x-faiz-khatri.vercel.app/) | [GitHub ↗](https://github.com/faizkhatri196/AI-CARRER-INTELIGENCE.git) |
 | **AI Copilot Interview Platform** | AI-powered interview copilot model helping students master technical interviews with real-time feedback and structured evaluations. | `LLM Integration` `Node.js` `MongoDB` `React` | [Live Demo ↗](https://ai-copilot-interview-model.netlify.app/) | [GitHub ↗](https://github.com/faizkhatri196/Ai-copilot-interview-model) |
 | **AI Smart City Management** | Location intelligence platform for smart city infrastructure management, traffic analysis, and urban analytics. | `React` `TypeScript` `Tailwind CSS` `REST API` | [Live Demo ↗](https://ai-smart-city-managment-xi.vercel.app/location-intelligence) | [GitHub ↗](https://github.com/faizkhatri196/AI-SMART-CITY-MANAGMENT.git) |
@@ -37,7 +36,7 @@ I specialize in designing autonomous agentic workflows, production-ready Advance
 
 ---
 
-## 🛠️ Technical Matrix
+## 🛠️ Technical Architecture
 
 ### 🧠 AI & Agentic Systems
 - **Agentic AI**: Multi-step agent loops, LangGraph state graphs, dynamic tool calling, memory management.
@@ -64,7 +63,7 @@ I specialize in designing autonomous agentic workflows, production-ready Advance
 - 🧊 **Interactive 3D WebGL Scene**: Three.js neural lattice and quantum geometric core with cursor-reactive spring physics, throttled for mobile and battery optimization.
 - ⚡ **Cinematic Preloader & Motion**: Awwwards-grade initial loading sequence with animated numerical counter and seamless curtain reveal.
 - 🎯 **Smooth Physics Cursor & Magnetic Controls**: Hardware-accelerated cursor lerp with reactive target expansion and magnetic pull on buttons.
-- 📱 **Full Breakpoint Responsiveness**: Pixel-perfect engineering across 320px, 375px, 430px, 768px, 1024px, 1366px, and 1920px.
+- 📱 **Full Breakpoint Responsiveness**: Pixel-perfect engineering across 320px, 360px, 375px, 390px, 430px, 540px, 768px, 820px, 1024px, 1280px, 1366px, 1440px, 1600px, and 1920px.
 
 ---
 
