@@ -322,7 +322,7 @@
           // Shield Barrier Ring
           ctx.beginPath();
           ctx.arc(cx, cy, r, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(240, 185, 45, 0.45)';
+          ctx.strokeStyle = 'rgba(204, 255, 0, 0.45)';
           ctx.lineWidth = 1.8;
           ctx.stroke();
 
@@ -330,18 +330,18 @@
           ctx.beginPath();
           ctx.moveTo(cx, cy);
           ctx.arc(cx, cy, r, frame * 0.03, frame * 0.03 + 0.45);
-          ctx.fillStyle = 'rgba(240, 185, 45, 0.18)';
+          ctx.fillStyle = 'rgba(204, 255, 0, 0.18)';
           ctx.fill();
 
           // Core Neural Node
           ctx.beginPath();
           ctx.arc(cx, cy, 9, 0, Math.PI * 2);
-          ctx.fillStyle = '#f0b92d';
+          ctx.fillStyle = '#ccff00';
           ctx.shadowBlur = 14;
-          ctx.shadowColor = '#f0b92d';
+          ctx.shadowColor = '#ccff00';
           ctx.fill();
           ctx.shadowBlur = 0;
-        } else if (type === 'rag') {
+        } else if (type === 'career') {
           // Vector Semantic Graph
           const cx = w / 2, cy = h / 2;
           const count = 12;
@@ -354,15 +354,15 @@
             ctx.beginPath();
             ctx.moveTo(cx, cy);
             ctx.lineTo(nx, ny);
-            ctx.strokeStyle = 'rgba(240, 185, 45, 0.22)';
+            ctx.strokeStyle = 'rgba(204, 255, 0, 0.22)';
             ctx.stroke();
 
             ctx.beginPath();
             ctx.arc(nx, ny, 3.5, 0, Math.PI * 2);
-            ctx.fillStyle = i % 2 === 0 ? '#f0b92d' : '#f7f4ed';
+            ctx.fillStyle = i % 2 === 0 ? '#ccff00' : '#f9fafb';
             ctx.fill();
           }
-        } else if (type === 'copilot') {
+        } else if (type === 'interview') {
           // Dynamic Neural Response Spectrum Wave
           const midY = h / 2;
           ctx.beginPath();
@@ -371,7 +371,7 @@
             const y = midY + Math.sin(x * 0.05 + frame * 0.08) * 24 * Math.cos(x * 0.02);
             ctx.lineTo(x, y);
           }
-          ctx.strokeStyle = '#f0b92d';
+          ctx.strokeStyle = '#ccff00';
           ctx.lineWidth = 2;
           ctx.stroke();
         } else if (type === 'smartcity') {
@@ -380,19 +380,19 @@
           for (let rad = 30; rad <= 100; rad += 35) {
             ctx.beginPath();
             ctx.arc(cx, cy, rad, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(247, 244, 237, 0.12)';
+            ctx.strokeStyle = 'rgba(249, 250, 251, 0.12)';
             ctx.stroke();
           }
           const bx = cx + Math.cos(frame * 0.02) * 65;
           const by = cy + Math.sin(frame * 0.02) * 65;
           ctx.beginPath();
           ctx.arc(bx, by, 4.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#f0b92d';
+          ctx.fillStyle = '#ccff00';
           ctx.shadowBlur = 10;
-          ctx.shadowColor = '#f0b92d';
+          ctx.shadowColor = '#ccff00';
           ctx.fill();
           ctx.shadowBlur = 0;
-        } else if (type === 'house3d') {
+        } else if (type === 'house') {
           // Isometric 3D Wireframe Cube
           const cx = w / 2, cy = h / 2;
           const s = 46;
@@ -400,7 +400,7 @@
           const cosA = Math.cos(a) * s;
           const sinA = Math.sin(a) * s;
 
-          ctx.strokeStyle = '#f0b92d';
+          ctx.strokeStyle = '#ccff00';
           ctx.lineWidth = 1.4;
 
           ctx.beginPath();
@@ -423,7 +423,7 @@
           const cx = w / 2, cy = h / 2;
           ctx.beginPath();
           ctx.ellipse(cx, cy, 95, 48, Math.PI / 6, 0, Math.PI * 2);
-          ctx.strokeStyle = 'rgba(240, 185, 45, 0.4)';
+          ctx.strokeStyle = 'rgba(204, 255, 0, 0.4)';
           ctx.setLineDash([4, 4]);
           ctx.stroke();
           ctx.setLineDash([]);
@@ -432,7 +432,7 @@
           const ty = cy + Math.sin(frame * 0.03) * 40;
           ctx.beginPath();
           ctx.arc(tx, ty, 4.5, 0, Math.PI * 2);
-          ctx.fillStyle = '#f0b92d';
+          ctx.fillStyle = '#ccff00';
           ctx.fill();
         }
       }

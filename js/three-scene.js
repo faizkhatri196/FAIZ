@@ -72,11 +72,11 @@
       const masterGroup = new THREE.Group();
       scene.add(masterGroup);
 
-      // Luxury Solar Amber Palette
-      const amberColor = new THREE.Color(0xf0b92d);
-      const amberGlow = new THREE.Color(0xffcd42);
-      const darkFacet = new THREE.Color(0x0a0c12);
-      const wireColor = new THREE.Color(0x9e9aa8);
+      // Electric Acid Lime & Titanium Studio Palette
+      const limeColor = new THREE.Color(0xccff00);
+      const limeGlow = new THREE.Color(0xe0ff4f);
+      const darkFacet = new THREE.Color(0x07090e);
+      const wireColor = new THREE.Color(0x64748b);
 
       // 1. Central Quantum Geodesic Polyhedron (Icosahedron)
       const coreGeo = new THREE.IcosahedronGeometry(isMobile ? 1.5 : 1.85, 2);
@@ -108,7 +108,7 @@
       const posAttr = coreGeo.attributes.position;
       pointGeo.setAttribute('position', posAttr);
       const pointMat = new THREE.PointsMaterial({
-        color: amberGlow,
+        color: limeGlow,
         size: isMobile ? 0.08 : 0.12,
         transparent: true,
         opacity: 0.95
@@ -120,7 +120,7 @@
       // Ring A — Equator tilt
       const ringAGeo = new THREE.TorusGeometry(isMobile ? 2.3 : 2.8, 0.018, 16, 120);
       const ringAMat = new THREE.MeshBasicMaterial({
-        color: amberColor,
+        color: limeColor,
         transparent: true,
         opacity: 0.6
       });
@@ -131,9 +131,9 @@
       // Ring B — Polar tilt
       const ringBGeo = new THREE.TorusGeometry(isMobile ? 2.55 : 3.1, 0.014, 16, 120);
       const ringBMat = new THREE.MeshBasicMaterial({
-        color: new THREE.Color(0xf7f4ed),
+        color: new THREE.Color(0xf9fafb),
         transparent: true,
-        opacity: 0.32
+        opacity: 0.35
       });
       const ringB = new THREE.Mesh(ringBGeo, ringBMat);
       ringB.rotation.y = Math.PI / 3.6;
@@ -156,7 +156,7 @@
       const particleGeo = new THREE.BufferGeometry();
       particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
       const particleMat = new THREE.PointsMaterial({
-        color: amberColor,
+        color: limeColor,
         size: isMobile ? 0.045 : 0.07,
         transparent: true,
         opacity: 0.75
@@ -165,13 +165,13 @@
       masterGroup.add(particleSystem);
 
       // 5. Studio Lighting
-      const keyLight = new THREE.DirectionalLight(0xfffaed, 2.5);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 2.5);
       keyLight.position.set(5, 5, 5);
       scene.add(keyLight);
 
-      const amberRimLight = new THREE.DirectionalLight(amberColor, 3.2);
-      amberRimLight.position.set(-5, -4, -4);
-      scene.add(amberRimLight);
+      const limeRimLight = new THREE.DirectionalLight(limeColor, 3.2);
+      limeRimLight.position.set(-5, -4, -4);
+      scene.add(limeRimLight);
 
       const ambientLight = new THREE.AmbientLight(0x11131c, 1.4);
       scene.add(ambientLight);
@@ -268,7 +268,7 @@
       vx: (Math.random() - 0.5) * 0.7,
       vy: (Math.random() - 0.5) * 0.7,
       radius: Math.random() * 2 + 1.2,
-      color: Math.random() > 0.5 ? '#f0b92d' : '#f7f4ed'
+      color: Math.random() > 0.5 ? '#ccff00' : '#f9fafb'
     });
   }
 
@@ -298,7 +298,7 @@
           ctx.beginPath();
           ctx.moveTo(n1.x, n1.y);
           ctx.lineTo(n2.x, n2.y);
-          ctx.strokeStyle = `rgba(240, 185, 45, ${(1 - dist / maxDist) * 0.35})`;
+          ctx.strokeStyle = `rgba(204, 255, 0, ${(1 - dist / maxDist) * 0.35})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
