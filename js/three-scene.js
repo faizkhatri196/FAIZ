@@ -1,16 +1,16 @@
-// FAIZ KHATRI — Awwwards SOTD Interactive WebGL Three.js Experience
-// Autonomous Neural Singularity & Quantum Gyroscope with Physics Inertia
+// FAIZ KHATRI — Experimental Digital Engineering WebGL Experience
+// Full-Screen Three.js Spatial Universe, Quantum Gyroscope & Particle Fluid Inertia
 
 (function () {
   'use strict';
 
-  const container = document.getElementById('hero-3d-container');
+  const container = document.getElementById('hero-3d-canvas-wrap');
   if (!container) return;
 
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let isMobile = window.innerWidth < 768;
 
-  // Visibility tracking via IntersectionObserver to pause rendering when hero is off-screen
+  // Visibility tracking via IntersectionObserver
   let isVisible = true;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -19,15 +19,15 @@
   }, { threshold: 0.05 });
   observer.observe(container);
 
-  // Mouse & Touch Tracking with Smooth Lerp Inertia
+  // Mouse & Touch Coordinates with Smooth Spring Lerp
   let mouseX = 0, mouseY = 0;
   let targetX = 0, targetY = 0;
   let windowHalfX = window.innerWidth / 2;
   let windowHalfY = window.innerHeight / 2;
 
   function updatePointer(clientX, clientY) {
-    targetX = (clientX - windowHalfX) * 0.0016;
-    targetY = (clientY - windowHalfY) * 0.0016;
+    targetX = (clientX - windowHalfX) * 0.0014;
+    targetY = (clientY - windowHalfY) * 0.0014;
   }
 
   window.addEventListener('mousemove', (e) => {
@@ -41,7 +41,7 @@
   }, { passive: true });
 
   // ─────────────────────────────────────────────────────────────────
-  // THREE.JS HIGH-END SCENE IMPLEMENTATION
+  // THREE.JS HIGH-END SPATIAL UNIVERSE
   // ─────────────────────────────────────────────────────────────────
   if (typeof THREE !== 'undefined') {
     try {
@@ -49,14 +49,14 @@
 
       // Camera
       const camera = new THREE.PerspectiveCamera(
-        42,
+        45,
         container.clientWidth / container.clientHeight,
         0.1,
         1000
       );
-      camera.position.z = isMobile ? 7.6 : 6.0;
+      camera.position.z = isMobile ? 8.2 : 6.4;
 
-      // WebGL Renderer
+      // Renderer
       const renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: !isMobile,
@@ -65,40 +65,40 @@
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.2;
+      renderer.toneMappingExposure = 1.25;
       container.appendChild(renderer.domElement);
 
-      // Master Group
+      // Master 3D Group
       const masterGroup = new THREE.Group();
       scene.add(masterGroup);
 
-      // Color Palette: Obsidian Black, Warm Off-White, Solar Amber
-      const amberColor = new THREE.Color(0xe8b931);
-      const amberGlow = new THREE.Color(0xffd866);
-      const darkSurface = new THREE.Color(0x0e1118);
-      const wireColor = new THREE.Color(0x9ca3af);
+      // Luxury Solar Amber Palette
+      const amberColor = new THREE.Color(0xf0b92d);
+      const amberGlow = new THREE.Color(0xffcd42);
+      const darkFacet = new THREE.Color(0x0a0c12);
+      const wireColor = new THREE.Color(0x9e9aa8);
 
-      // 1. Dual Geodesic Polyhedron (Icosahedron Inner Core)
-      const coreGeo = new THREE.IcosahedronGeometry(isMobile ? 1.35 : 1.65, 2);
+      // 1. Central Quantum Geodesic Polyhedron (Icosahedron)
+      const coreGeo = new THREE.IcosahedronGeometry(isMobile ? 1.5 : 1.85, 2);
 
-      // Inner Translucent Dark Facets
+      // Dark Translucent Facets
       const coreFacetMat = new THREE.MeshStandardMaterial({
-        color: darkSurface,
-        roughness: 0.25,
-        metalness: 0.85,
+        color: darkFacet,
+        roughness: 0.2,
+        metalness: 0.9,
         transparent: true,
-        opacity: 0.78,
+        opacity: 0.82,
         flatShading: true
       });
       const coreMesh = new THREE.Mesh(coreGeo, coreFacetMat);
       masterGroup.add(coreMesh);
 
-      // Wireframe Lattice Shell
+      // Wireframe Lattice Cage
       const wireMat = new THREE.MeshBasicMaterial({
         color: wireColor,
         wireframe: true,
         transparent: true,
-        opacity: 0.32
+        opacity: 0.38
       });
       const wireMesh = new THREE.Mesh(coreGeo, wireMat);
       masterGroup.add(wireMesh);
@@ -109,7 +109,7 @@
       pointGeo.setAttribute('position', posAttr);
       const pointMat = new THREE.PointsMaterial({
         color: amberGlow,
-        size: isMobile ? 0.08 : 0.11,
+        size: isMobile ? 0.08 : 0.12,
         transparent: true,
         opacity: 0.95
       });
@@ -118,71 +118,65 @@
 
       // 3. Gyroscopic Orbital Gimbal Rings
       // Ring A — Equator tilt
-      const ringAGeo = new THREE.TorusGeometry(isMobile ? 2.15 : 2.55, 0.016, 16, 120);
+      const ringAGeo = new THREE.TorusGeometry(isMobile ? 2.3 : 2.8, 0.018, 16, 120);
       const ringAMat = new THREE.MeshBasicMaterial({
         color: amberColor,
         transparent: true,
-        opacity: 0.55
+        opacity: 0.6
       });
       const ringA = new THREE.Mesh(ringAGeo, ringAMat);
       ringA.rotation.x = Math.PI / 3.2;
       masterGroup.add(ringA);
 
       // Ring B — Polar tilt
-      const ringBGeo = new THREE.TorusGeometry(isMobile ? 2.35 : 2.85, 0.012, 16, 120);
+      const ringBGeo = new THREE.TorusGeometry(isMobile ? 2.55 : 3.1, 0.014, 16, 120);
       const ringBMat = new THREE.MeshBasicMaterial({
-        color: new THREE.Color(0xf5f2eb),
+        color: new THREE.Color(0xf7f4ed),
         transparent: true,
-        opacity: 0.28
+        opacity: 0.32
       });
       const ringB = new THREE.Mesh(ringBGeo, ringBMat);
-      ringB.rotation.y = Math.PI / 3.8;
+      ringB.rotation.y = Math.PI / 3.6;
       masterGroup.add(ringB);
 
-      // 4. Floating Neural Constellation Particle Field
-      const particleCount = isMobile ? 90 : 220;
+      // 4. Surrounding Neural Stardust Constellation
+      const particleCount = isMobile ? 100 : 260;
       const particlePositions = new Float32Array(particleCount * 3);
-      const particleVelocities = [];
 
       for (let i = 0; i < particleCount * 3; i += 3) {
-        const radius = 2.6 + Math.random() * 2.8;
+        const radius = 2.8 + Math.random() * 3.5;
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos(Math.random() * 2 - 1);
 
         particlePositions[i] = radius * Math.sin(phi) * Math.cos(theta);
         particlePositions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
         particlePositions[i + 2] = radius * Math.cos(phi);
-
-        particleVelocities.push({
-          thetaSpeed: (Math.random() - 0.5) * 0.005,
-          phiSpeed: (Math.random() - 0.5) * 0.003
-        });
       }
 
       const particleGeo = new THREE.BufferGeometry();
       particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
       const particleMat = new THREE.PointsMaterial({
         color: amberColor,
-        size: isMobile ? 0.04 : 0.065,
+        size: isMobile ? 0.045 : 0.07,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.75
       });
       const particleSystem = new THREE.Points(particleGeo, particleMat);
       masterGroup.add(particleSystem);
 
       // 5. Studio Lighting
-      const keyLight = new THREE.DirectionalLight(0xfffaed, 2.2);
-      keyLight.position.set(4, 5, 4);
+      const keyLight = new THREE.DirectionalLight(0xfffaed, 2.5);
+      keyLight.position.set(5, 5, 5);
       scene.add(keyLight);
 
-      const amberRimLight = new THREE.DirectionalLight(amberColor, 3.0);
-      amberRimLight.position.set(-5, -4, -3);
+      const amberRimLight = new THREE.DirectionalLight(amberColor, 3.2);
+      amberRimLight.position.set(-5, -4, -4);
       scene.add(amberRimLight);
 
-      const ambientLight = new THREE.AmbientLight(0x181a24, 1.2);
+      const ambientLight = new THREE.AmbientLight(0x11131c, 1.4);
       scene.add(ambientLight);
 
-      // Animation Loop
+      // Animation Loop with Fluid Inertia
       let clock = new THREE.Clock();
 
       function animate() {
@@ -192,12 +186,11 @@
 
         const time = clock.getElapsedTime();
 
-        // Mouse smooth interpolation
+        // Mouse smooth spring interpolation
         mouseX += (targetX - mouseX) * 0.045;
         mouseY += (targetY - mouseY) * 0.045;
 
         if (!isReducedMotion) {
-          // Autonomous slow orbital rotation
           coreMesh.rotation.y += 0.0035;
           coreMesh.rotation.x += 0.0018;
           wireMesh.rotation.y = coreMesh.rotation.y;
@@ -214,14 +207,13 @@
           particleSystem.rotation.y -= 0.0012;
           particleSystem.rotation.x += 0.0008;
 
-          // Harmonic breathing scale
-          const scale = 1 + Math.sin(time * 1.4) * 0.028;
+          // Harmonic scale pulse
+          const scale = 1 + Math.sin(time * 1.4) * 0.026;
           coreMesh.scale.set(scale, scale, scale);
           wireMesh.scale.set(scale, scale, scale);
           vertexPoints.scale.set(scale, scale, scale);
         }
 
-        // Apply mouse gyroscopic torque to master group
         masterGroup.rotation.y = mouseX * 1.5;
         masterGroup.rotation.x = mouseY * 1.5;
 
@@ -237,7 +229,7 @@
         const width = container.clientWidth;
         const height = container.clientHeight;
         camera.aspect = width / height;
-        camera.position.z = isMobile ? 7.6 : 6.0;
+        camera.position.z = isMobile ? 8.2 : 6.4;
         camera.updateProjectionMatrix();
         renderer.setSize(width, height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 2));
@@ -245,14 +237,14 @@
         windowHalfY = window.innerHeight / 2;
       }, { passive: true });
 
-      return; // Three.js loaded and active!
+      return;
     } catch (err) {
       console.warn('Three.js initialization fallback:', err);
     }
   }
 
   // ─────────────────────────────────────────────────────────────────
-  // 2D CANVAS FALLBACK (Zero External Dependencies, Crisp 60+ FPS)
+  // 2D CANVAS FALLBACK
   // ─────────────────────────────────────────────────────────────────
   const canvas = document.createElement('canvas');
   canvas.className = 'hero-fallback-canvas';
@@ -267,7 +259,7 @@
   resize2D();
   window.addEventListener('resize', resize2D, { passive: true });
 
-  const numNodes = isMobile ? 28 : 50;
+  const numNodes = isMobile ? 32 : 55;
   const nodes = [];
   for (let i = 0; i < numNodes; i++) {
     nodes.push({
@@ -276,7 +268,7 @@
       vx: (Math.random() - 0.5) * 0.7,
       vy: (Math.random() - 0.5) * 0.7,
       radius: Math.random() * 2 + 1.2,
-      color: Math.random() > 0.5 ? '#e8b931' : '#f5f2eb'
+      color: Math.random() > 0.5 ? '#f0b92d' : '#f7f4ed'
     });
   }
 
@@ -300,13 +292,13 @@
         const dx = n1.x - n2.x;
         const dy = n1.y - n2.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = isMobile ? 85 : 120;
+        const maxDist = isMobile ? 85 : 125;
 
         if (dist < maxDist) {
           ctx.beginPath();
           ctx.moveTo(n1.x, n1.y);
           ctx.lineTo(n2.x, n2.y);
-          ctx.strokeStyle = `rgba(232, 185, 49, ${(1 - dist / maxDist) * 0.35})`;
+          ctx.strokeStyle = `rgba(240, 185, 45, ${(1 - dist / maxDist) * 0.35})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }

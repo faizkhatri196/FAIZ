@@ -6,10 +6,12 @@
   "scripts": {
     "build": "node scripts/build.js && tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/test-suite.js"
+    "test": "node scripts/test-suite.js",
+    "audit:visual": "node scripts/visual-qa.js"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
+    "playwright": "^1.64.1",
     "typescript": "^5.7.3"
   }
 }

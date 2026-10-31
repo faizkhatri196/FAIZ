@@ -116,7 +116,7 @@
         }
       });
 
-      langMenu.querySelectorAll('.lang-item').forEach(item => {
+      langMenu.querySelectorAll('.lang-item, .lang-option, [data-lang]').forEach(item => {
         item.addEventListener('click', (e) => {
           e.stopPropagation();
           const selectedLang = item.dataset.lang;

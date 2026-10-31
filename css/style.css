@@ -12,6 +12,24 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+  overflow-wrap: break-word;
+}
+
+.hero-grid > *,
+.about-grid > *,
+.contact-console-grid > *,
+.skills-matrix-grid > *,
+.capabilities-grid > * {
+  min-width: 0;
+}
+
 :root {
   /* Surfaces */
   --bg-pitch: #050608;
@@ -117,11 +135,18 @@ body.scroll-locked {
   opacity: 0.4;
 }
 
-.ambient-sheen {
+.ambient-glow-wrapper {
   position: fixed;
-  border-radius: 50%;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
+}
+
+.ambient-sheen {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
   filter: blur(150px);
 }
 
@@ -676,13 +701,17 @@ body.scroll-locked {
   justify-content: space-between;
   padding: clamp(24px, 6vw, 44px);
   transform: translateX(100%);
-  transition: transform 0.45s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 0.45s cubic-bezier(0.85, 0, 0.15, 1), visibility 0.45s;
   overflow-y: auto;
   max-width: 100vw;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .drawer-head {
@@ -1321,9 +1350,10 @@ body.scroll-locked {
 /* ── 12 · EXPERTISE & SKILLS MATRIX ───────────────────────────── */
 .skills-matrix-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 24px;
   min-width: 0;
+  width: 100%;
 }
 
 .skill-matrix-panel {
@@ -1516,12 +1546,14 @@ body.scroll-locked {
 
 .contact-hero-heading {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+  font-size: clamp(1.75rem, 5vw, 4.4rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: 1.1;
   color: var(--text-white);
   margin-bottom: 24px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-hero-heading em {
@@ -1665,14 +1697,17 @@ body.scroll-locked {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
   min-width: 0;
+  width: 100%;
 }
 
 .footer-brand {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 8px 12px;
+  max-width: 100%;
 }
 
 .footer-wordmark {
@@ -1680,18 +1715,22 @@ body.scroll-locked {
   font-size: 1rem;
   font-weight: 800;
   color: var(--text-white);
+  white-space: nowrap;
 }
 
 .footer-role {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-dim);
+  overflow-wrap: break-word;
 }
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 12px 18px;
+  max-width: 100%;
 }
 
 .footer-links a {

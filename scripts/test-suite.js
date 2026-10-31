@@ -149,3 +149,4 @@ if (passedTests === totalTests) {
   console.error('TEST SUITE DETECTED FAILURES.\n');
   process.exit(1);
 }
+

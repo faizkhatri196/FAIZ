@@ -18,3 +18,4 @@ declare namespace NodeJS {
     window: any;
   }
 }
+

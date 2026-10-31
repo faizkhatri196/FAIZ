@@ -7,7 +7,8 @@
   <title>Faiz Khatri — Software Engineer & AI Systems Architect</title>
   <meta name="description" content="Faiz Khatri — Software Engineer, AI Systems Architect & Full Stack Developer specializing in Agentic AI Workflows, Advanced RAG, and scalable intelligent web applications. Gujarat, India.">
   <meta name="author" content="Faiz Khatri">
-  <meta name="theme-color" content="#050608">
+  <meta name="theme-color" content="#030406">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030406'/><text x='50%25' y='68%25' font-family='monospace' font-weight='bold' font-size='56' fill='%23f0b92d' text-anchor='middle'>FK</text></svg>">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Faiz Khatri — Software Engineer & AI Systems Architect">
@@ -56,8 +57,10 @@
 
   <!-- Atmospheric Grain & Radial Sheens -->
   <div class="bg-grain" aria-hidden="true"></div>
-  <div class="ambient-sheen sheen-top" aria-hidden="true"></div>
-  <div class="ambient-sheen sheen-bottom" aria-hidden="true"></div>
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="ambient-sheen sheen-top"></div>
+    <div class="ambient-sheen sheen-bottom"></div>
+  </div>
 
   <!-- ═══════════════════════════════════════
        01 · NAVIGATION DOCK
@@ -188,9 +191,9 @@
             </div>
           </div>
 
-          <!-- 3D Interactive WebGL Neural Core -->
+          <!-- 3D Interactive WebGL Spatial Universe -->
           <div class="hero-3d-wrap reveal rd2">
-            <div id="hero-3d-container"></div>
+            <div id="hero-3d-canvas-wrap" style="width:100%;height:100%;"></div>
             <div class="hero-hud-frame" aria-hidden="true">
               <div class="hud-angle hud-tl"></div>
               <div class="hud-angle hud-tr"></div>
@@ -353,7 +356,12 @@
               <canvas class="project-canvas-simulation" data-sim="agentshield"></canvas>
               <div class="project-stage-hud">
                 <span class="stage-badge-spec">GUARDRAILS // PAYPAL AI</span>
-                <span class="stage-sub-telemetry">NEURAL TRANSACTION FIREWALL</span>
+                <span class="stage-sub-telemetry">LIVE SECURITY FIREWALL SANDBOX</span>
+                <div style="display:flex;gap:8px;margin-top:8px;">
+                  <button class="btn-ghost btn-sm sim-action-btn" id="simAttackBtn" style="font-size:0.68rem;padding:4px 10px;min-height:30px;">Simulate Injection ⚠️</button>
+                  <button class="btn-ghost btn-sm sim-action-btn" id="simSafeBtn" style="font-size:0.68rem;padding:4px 10px;min-height:30px;">Verify Safe Tx ✓</button>
+                </div>
+                <div id="simLog" style="font-family:var(--font-mono);font-size:0.68rem;max-width:320px;text-align:center;min-height:2.4em;margin-top:6px;">Ready for simulation.</div>
               </div>
             </div>
             <div class="project-content-stage">
