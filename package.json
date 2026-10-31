@@ -4,7 +4,7 @@
   "private": true,
   "description": "Faiz Khatri — Software Engineer & AI Systems Architect Portfolio",
   "scripts": {
-    "build": "node scripts/build.js && tsc --noEmit",
+    "build": "node scripts/build.js",
     "typecheck": "tsc --noEmit",
     "test": "node scripts/test-suite.js",
     "audit:visual": "node scripts/visual-qa.js"
