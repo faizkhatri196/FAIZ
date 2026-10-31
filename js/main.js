@@ -1,248 +1,497 @@
-// FAIZ KHATRI — Ultra-Premium Portfolio Controller v5.0 (AI Engineer Edition)
+// FAIZ KHATRI — Portfolio Architectural Controller v6.0
+// Elite Motion Design, Smooth Lenis Integration, Preloader, Magnetic Interactions, and Micro-Engines
 
 (function () {
   'use strict';
 
-  // ── SMOOTH HARDWARE-ACCELERATED LERP CURSOR ────────────────────
+  // ─────────────────────────────────────────────────────────────────
+  // 01 · PRELOADER & INITIAL CURTAIN REVEAL
+  // ─────────────────────────────────────────────────────────────────
+  const preloader = document.getElementById('preloader');
+  const preloaderCount = document.getElementById('preloader-count');
+  const preloaderBar = document.getElementById('preloader-progress-bar');
+  const preloaderStatus = document.getElementById('preloader-status');
+
+  let progress = 0;
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function runPreloader() {
+    if (!preloader) {
+      document.body.classList.add('site-loaded');
+      return;
+    }
+
+    const interval = setInterval(() => {
+      // Faster progression curve with slight realistic jitter
+      progress += Math.floor(Math.random() * 8) + 4;
+      if (progress > 100) progress = 100;
+
+      if (preloaderCount) {
+        preloaderCount.textContent = (progress < 10 ? '00' : progress < 100 ? '0' : '') + progress + '%';
+      }
+      if (preloaderBar) {
+        preloaderBar.style.width = progress + '%';
+      }
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        if (preloaderStatus) {
+          preloaderStatus.textContent = window.translate ? window.translate('preloader.ready') : 'SYSTEM READY';
+        }
+
+        setTimeout(() => {
+          preloader.classList.add('preloader-exit');
+          document.body.classList.add('site-loaded');
+
+          // Trigger entrance reveals
+          triggerEntranceAnimations();
+
+          setTimeout(() => {
+            if (preloader.parentNode) {
+              preloader.parentNode.removeChild(preloader);
+            }
+          }, 850);
+        }, isReducedMotion ? 50 : 250);
+      }
+    }, isReducedMotion ? 10 : 35);
+  }
+
+  if (document.readyState === 'complete') {
+    runPreloader();
+  } else {
+    window.addEventListener('load', runPreloader);
+  }
+
+  // ─────────────────────────────────────────────────────────────────
+  // 02 · LENIS SMOOTH SCROLLING (With Native Fallback)
+  // ─────────────────────────────────────────────────────────────────
+  let lenisInstance = null;
+  const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  if (typeof window.Lenis !== 'undefined' && !isReducedMotion && !isTouchDevice) {
+    try {
+      lenisInstance = new window.Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+        smoothTouch: false,
+        direction: 'vertical'
+      });
+
+      function raf(time) {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Connect with GSAP ScrollTrigger if present
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenisInstance.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenisInstance.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+    } catch (e) {
+      console.warn('Lenis smooth scrolling fallback to native:', e);
+    }
+  }
+
+  // Handle smooth scroll clicks for internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || !targetId) return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        if (lenisInstance) {
+          lenisInstance.scrollTo(targetEl, { offset: -70 });
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        // If mobile menu is open, close it
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+          closeMobileMenu();
+        }
+      }
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────────────
+  // 03 · HARDWARE-ACCELERATED LERP CURSOR & MAGNETIC BUTTONS
+  // ─────────────────────────────────────────────────────────────────
   const cur = document.getElementById('cur');
   const ring = document.getElementById('ring');
-  const isTouch = window.matchMedia('(hover: none), (pointer: coarse), (max-width: 900px)').matches;
 
-  let mouseX = -200, mouseY = -200;
-  let ringX = -200, ringY = -200;
-  let isHovered = false;
+  let mouseX = -100, mouseY = -100;
+  let ringX = -100, ringY = -100;
 
-  if (!isTouch && cur && ring) {
-    window.addEventListener('mousemove', e => {
+  if (!isTouchDevice && cur && ring) {
+    window.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       cur.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     }, { passive: true });
 
     function renderCursor() {
-      // Smooth lerp for ring follower
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
       ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
       requestAnimationFrame(renderCursor);
     }
     requestAnimationFrame(renderCursor);
 
-    // Cursor scaling on interactive elements
-    function bindCursorHovers() {
-      document.querySelectorAll('a, button, .proj-feature, .proj-wide, .proj-list-item, .info-row, .exp-item, .filter-btn, .skill-group').forEach(el => {
-        if (el._cursorBound) return;
-        el._cursorBound = true;
+    // Interactive element targeting
+    function setupCursorListeners() {
+      const targets = document.querySelectorAll(
+        'a, button, .interactive-card, .proj-card, .skill-node, .filter-btn, .lang-item, input, textarea, .magnetic'
+      );
+
+      targets.forEach((el) => {
+        if (el._cursorAttached) return;
+        el._cursorAttached = true;
+
         el.addEventListener('mouseenter', () => {
-          isHovered = true;
-          ring.style.width = '54px';
-          ring.style.height = '54px';
-          ring.style.borderColor = 'rgba(56,189,248,.6)';
-          ring.style.backgroundColor = 'rgba(56,189,248,.04)';
+          ring.classList.add('ring-hover');
+          cur.classList.add('cur-hover');
         });
+
         el.addEventListener('mouseleave', () => {
-          isHovered = false;
-          ring.style.width = '38px';
-          ring.style.height = '38px';
-          ring.style.borderColor = 'rgba(255,255,255,.22)';
-          ring.style.backgroundColor = 'transparent';
+          ring.classList.remove('ring-hover');
+          cur.classList.remove('cur-hover');
         });
       });
     }
-    bindCursorHovers();
-    new MutationObserver(bindCursorHovers).observe(document.body, { childList: true, subtree: true });
+
+    setupCursorListeners();
+    new MutationObserver(setupCursorListeners).observe(document.body, { childList: true, subtree: true });
+
+    // Magnetic buttons physics
+    const magneticElements = document.querySelectorAll('.magnetic');
+    magneticElements.forEach((el) => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        el.style.transform = `translate3d(${x * 0.28}px, ${y * 0.28}px, 0)`;
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'translate3d(0, 0, 0)';
+        el.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+        setTimeout(() => { el.style.transition = ''; }, 400);
+      });
+    });
   }
 
-  // ── BACKGROUND GRID CANVAS ─────────────────────────────────────
-  const canvas = document.getElementById('bg-grid-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let W, H;
-
-    function resizeCanvas() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-      drawGrid();
-    }
-
-    function drawGrid() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, W, H);
-      ctx.strokeStyle = 'rgba(255,255,255,0.025)';
-      ctx.lineWidth = 1;
-
-      const step = 80;
-      ctx.beginPath();
-      for (let x = 0; x <= W; x += step) {
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, H);
-      }
-      for (let y = 0; y <= H; y += step) {
-        ctx.moveTo(0, y);
-        ctx.lineTo(W, y);
-      }
-      ctx.stroke();
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas, { passive: true });
-  }
-
-  // ── AI ENGINEER TYPEWRITER ─────────────────────────────────────
-  let words = [
+  // ─────────────────────────────────────────────────────────────────
+  // 04 · TYPEWRITER ENGINE
+  // ─────────────────────────────────────────────────────────────────
+  let typewriterWords = [
     'Agentic AI Workflows',
-    'Advanced RAG Systems',
-    'LLM Tool Calling & Graphs',
+    'Advanced RAG Architectures',
+    'AI Payment Security & Guardrails',
     'AWS Bedrock Orchestration',
-    'Autonomous AI Solutions'
+    'Scalable Full Stack Products'
   ];
 
-  let wi = 0, ci = 0, deleting = false;
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
   const typedEl = document.getElementById('typed');
 
-  function tick() {
+  function tickTypewriter() {
     if (!typedEl) return;
-    const w = words[wi] || words[0];
-    typedEl.textContent = deleting ? w.slice(0, --ci) : w.slice(0, ++ci);
+    const currentWord = typewriterWords[wordIndex] || typewriterWords[0];
 
-    if (!deleting && ci === w.length) {
-      deleting = true;
-      return setTimeout(tick, 2200);
+    typedEl.textContent = isDeleting
+      ? currentWord.substring(0, --charIndex)
+      : currentWord.substring(0, ++charIndex);
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(tickTypewriter, 2400);
+      return;
     }
-    if (deleting && ci === 0) {
-      deleting = false;
-      wi = (wi + 1) % words.length;
+
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % typewriterWords.length;
     }
-    setTimeout(tick, deleting ? 30 : 65);
+
+    setTimeout(tickTypewriter, isDeleting ? 35 : 70);
   }
-  tick();
+  tickTypewriter();
 
-  // Allow i18n to dynamically update typewriter words
   if (typeof window.onTypewriterWordsUpdate === 'function') {
-    window.onTypewriterWordsUpdate(localizedWords => {
+    window.onTypewriterWordsUpdate((localizedWords) => {
       if (Array.isArray(localizedWords) && localizedWords.length) {
-        words = localizedWords;
-        wi = 0; ci = 0; deleting = false;
+        typewriterWords = localizedWords;
+        wordIndex = 0;
+        charIndex = 0;
+        isDeleting = false;
       }
     });
   }
 
-  // ── DOCK — MOBILE BURGER ───────────────────────────────────────
-  const burger = document.getElementById('dockBurger');
-  const dockMid = document.getElementById('dock-mid');
-
-  if (burger && dockMid) {
-    burger.addEventListener('click', e => {
-      e.stopPropagation();
-      dockMid.classList.toggle('open');
-    });
-
-    document.addEventListener('click', e => {
-      if (!burger.contains(e.target) && !dockMid.contains(e.target)) {
-        dockMid.classList.remove('open');
-      }
-    });
-
-    dockMid.querySelectorAll('.dock-link').forEach(link => {
-      link.addEventListener('click', () => dockMid.classList.remove('open'));
+  // ─────────────────────────────────────────────────────────────────
+  // 05 · ENTRANCE & SCROLL REVEAL ANIMATIONS
+  // ─────────────────────────────────────────────────────────────────
+  function triggerEntranceAnimations() {
+    const heroReveals = document.querySelectorAll('#hero .reveal');
+    heroReveals.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('in-view');
+      }, i * 90);
     });
   }
 
-  // ── DOCK — ACTIVE LINK ON SCROLL ──────────────────────────────
-  const sections = [...document.querySelectorAll('section[id]')];
-  const dockLinks = [...document.querySelectorAll('.dock-link')];
+  // IntersectionObserver for all subsequent reveals
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -50px 0px' }
+  );
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const y = window.scrollY + 140;
-    sections.forEach(s => {
-      if (y >= s.offsetTop) current = s.id;
-    });
-    dockLinks.forEach(a => {
-      a.classList.toggle('active-link', a.getAttribute('href') === '#' + current);
-    });
-  }, { passive: true });
+  document.querySelectorAll('.reveal').forEach((el) => {
+    // Hero elements will be triggered by triggerEntranceAnimations() once preloader completes
+    if (!el.closest('#hero')) {
+      revealObserver.observe(el);
+    }
+  });
 
-  // ── PROJECT FILTERING ──────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────────────
+  // 06 · PROJECT FILTERING SYSTEM
+  // ─────────────────────────────────────────────────────────────────
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectItems = document.querySelectorAll('[data-category]');
+  const projectCards = document.querySelectorAll('.proj-card[data-category]');
 
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const f = btn.dataset.filter;
+      const filter = btn.dataset.filter;
 
-      projectItems.forEach(item => {
-        const cats = (item.dataset.category || '').split(' ');
-        if (f === 'all' || cats.includes(f)) {
-          item.classList.remove('hidden-card');
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(10px)';
-          item.style.transition = 'opacity .35s ease, transform .35s ease';
+      projectCards.forEach((card) => {
+        const categories = (card.dataset.category || '').split(' ');
+        const matches = filter === 'all' || categories.includes(filter);
+
+        if (matches) {
+          card.classList.remove('hidden-project');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px)';
           requestAnimationFrame(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
           });
         } else {
-          item.classList.add('hidden-card');
+          card.classList.add('hidden-project');
         }
       });
     });
   });
 
-  // ── SCROLL REVEAL ──────────────────────────────────────────────
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-      }
+  // ─────────────────────────────────────────────────────────────────
+  // 07 · CARD HOVER COORDINATE LIGHTING (Awwwards 3D Sheen)
+  // ─────────────────────────────────────────────────────────────────
+  const interactiveCards = document.querySelectorAll('.interactive-card, .proj-card, .skill-card, .exp-card');
+  interactiveCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  });
 
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  // ─────────────────────────────────────────────────────────────────
+  // 08 · MOBILE DRAWER NAVIGATION
+  // ─────────────────────────────────────────────────────────────────
+  const burgerBtn = document.getElementById('dockBurger');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
 
-  // ── CONTACT FORM ───────────────────────────────────────────────
-  const form = document.getElementById('contactForm');
-  const sendBtn = document.getElementById('sendBtn');
-
-  if (form && sendBtn) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const originalText = sendBtn.textContent;
-      sendBtn.textContent = 'Message Sent ✓';
-      sendBtn.style.background = '#22c55e';
-      sendBtn.style.color = '#fff';
-      setTimeout(() => {
-        sendBtn.textContent = originalText;
-        sendBtn.style.background = '';
-        sendBtn.style.color = '';
-        form.reset();
-      }, 3500);
-    });
+  function openMobileMenu() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.add('open');
+    burgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
 
-  // ── HERO NAME HOVER PARALLAX (Desktop only) ────────────────────
-  const heroName = document.querySelector('.hero-name');
-  if (heroName && !isTouch) {
-    document.addEventListener('mousemove', e => {
-      const px = (e.clientX / window.innerWidth - 0.5) * 8;
-      const py = (e.clientY / window.innerHeight - 0.5) * 4;
-      heroName.style.transform = `translate3d(${px}px, ${py}px, 0)`;
-    }, { passive: true });
+  function closeMobileMenu() {
+    if (!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   }
 
-  // ── DOCK SCROLL EFFECT ─────────────────────────────────────────
-  const dock = document.getElementById('dock');
-  if (dock) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        dock.style.boxShadow = '0 8px 40px rgba(0,0,0,.7), 0 0 60px rgba(56,189,248,.08)';
+  if (burgerBtn && mobileDrawer) {
+    burgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileDrawer.classList.contains('open')) {
+        closeMobileMenu();
       } else {
-        dock.style.boxShadow = '';
+        openMobileMenu();
       }
-    }, { passive: true });
+    });
+
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    mobileDrawer.querySelectorAll('.drawer-link').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+  // ─────────────────────────────────────────────────────────────────
+  // 09 · ACTIVE NAV LINK ON SCROLL & DOCK SHADOW
+  // ─────────────────────────────────────────────────────────────────
+  const dock = document.getElementById('dock');
+  const navSections = [...document.querySelectorAll('section[id]')];
+  const dockNavLinks = [...document.querySelectorAll('.dock-link')];
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    // Header dock shadow & background depth
+    if (dock) {
+      if (scrollY > 40) {
+        dock.classList.add('dock-scrolled');
+      } else {
+        dock.classList.remove('dock-scrolled');
+      }
+    }
+
+    // Active link highlighting
+    let currentId = '';
+    const triggerPoint = scrollY + 220;
+
+    navSections.forEach((section) => {
+      if (triggerPoint >= section.offsetTop) {
+        currentId = section.id;
+      }
+    });
+
+    dockNavLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active-link', href === '#' + currentId);
+    });
+  }, { passive: true });
+
+  // ─────────────────────────────────────────────────────────────────
+  // 10 · LIVE CLOCK (Gujarat, India · UTC+5:30)
+  // ─────────────────────────────────────────────────────────────────
+  const liveClockEl = document.getElementById('liveClock');
+
+  function updateLiveClock() {
+    if (!liveClockEl) return;
+    try {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      const formatter = new Intl.DateTimeFormat([], options);
+      liveClockEl.textContent = `${formatter.format(now)} IST`;
+    } catch (e) {
+      const now = new Date();
+      liveClockEl.textContent = `${now.toTimeString().substring(0, 8)} IST`;
+    }
+  }
+  updateLiveClock();
+  setInterval(updateLiveClock, 1000);
+
+  // ─────────────────────────────────────────────────────────────────
+  // 11 · CONTACT FORM & CLIPBOARD COPY
+  // ─────────────────────────────────────────────────────────────────
+  const contactForm = document.getElementById('contactForm');
+  const sendBtn = document.getElementById('sendBtn');
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+  const copyToast = document.getElementById('copyToast');
+
+  if (contactForm && sendBtn) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const originalText = sendBtn.innerHTML;
+
+      // Visual state indication
+      sendBtn.innerHTML = '<span>Transmitting...</span>';
+      sendBtn.disabled = true;
+
+      setTimeout(() => {
+        sendBtn.innerHTML = '<span>Message Transmitted ✓</span>';
+        sendBtn.classList.add('btn-success');
+
+        const nameInput = document.getElementById('cf-name');
+        const emailInput = document.getElementById('cf-email');
+        const msgInput = document.getElementById('cf-msg');
+
+        // Optional mailto link fallback so user can send direct email
+        const mailtoSubject = encodeURIComponent(`Portfolio Inquiry from ${nameInput ? nameInput.value : 'Visitor'}`);
+        const mailtoBody = encodeURIComponent(
+          `Name: ${nameInput ? nameInput.value : ''}\nEmail: ${emailInput ? emailInput.value : ''}\n\nMessage:\n${msgInput ? msgInput.value : ''}`
+        );
+
+        setTimeout(() => {
+          sendBtn.innerHTML = originalText;
+          sendBtn.disabled = false;
+          sendBtn.classList.remove('btn-success');
+          contactForm.reset();
+        }, 4000);
+      }, 700);
+    });
+  }
+
+  // Copy email to clipboard with animated toast notification
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = 'faizkhatri1819@gmail.com';
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(showToast).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = email;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+        showToast();
+      }
+
+      function showToast() {
+        if (!copyToast) return;
+        copyToast.classList.add('show');
+        setTimeout(() => {
+          copyToast.classList.remove('show');
+        }, 2800);
+      }
+    });
   }
 
 })();

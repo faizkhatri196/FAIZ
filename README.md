@@ -1,32 +1,33 @@
-# Faiz Khatri — AI Systems & LLM Engineer Portfolio
+# Faiz Khatri — Software Engineer | AI Engineer | Full Stack Developer
 
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-faizxcode.netlify.app-38bdf8?style=for-the-badge&logo=netlify&logoColor=white)](https://faizxcode.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Live_Portfolio-faizxcode.netlify.app-d4ff32?style=for-the-badge&logo=netlify&logoColor=black)](https://faizxcode.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-faizkhatri196-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/faizkhatri196)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Faiz_Khatri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/faiz-khatri-1912ab344)
 [![LeetCode](https://img.shields.io/badge/LeetCode-faizkhatri196-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/faizkhatri196/)
 
-> **"Architecting production-grade Agentic AI workflows, Advanced RAG systems, and high-performance intelligent software."**
+> **"Architecting production-ready Agentic AI workflows, Advanced RAG systems, and high-performance intelligent software with AWS Bedrock, Python, and modern web stacks."**
 
 ---
 
 ## ⚡ About Me
 
-I am **Faiz Khatri**, an **AI Systems & LLM Engineer** and 5th Semester Information Technology Engineering student (**8.55 SPI**) at **GTU (Gujarat Technological University)**, India.
+I am **Faiz Khatri**, a **Software Engineer, AI Engineer & Full Stack Developer** based in Gujarat, India.
 
-I specialize in designing autonomous agentic workflows, production-ready Advanced RAG pipelines, dynamic tool-calling systems, and scalable full-stack applications powered by **AWS Bedrock**, **Python**, **LangGraph**, and **React**.
+I specialize in designing autonomous agentic workflows, production-ready Advanced RAG pipelines, dynamic tool-calling architectures, neural guardrails, and scalable full-stack applications powered by **AWS Bedrock**, **Python**, **LangGraph**, and **React**.
 
-- 🔭 **Core Focus**: Agentic AI Workflows, Advanced RAG Architectures, LLM Tool Calling, Model Fine-Tuning & Evaluation.
+- 🔭 **Core Focus**: Agentic AI Workflows, Advanced RAG Architectures, LLM Tool Calling, AI Payment Security & Guardrails.
 - ☁️ **Cloud AI**: AWS Bedrock, Claude, Foundation Model Orchestration.
-- 🎓 **Education**: B.E. in Information Technology, GTU · 5th Semester (8.55 SPI).
+- 🎓 **Education**: B.E. in Information Technology, Gujarat Technological University (GEC Modasa).
 - 💬 **Ask me about**: LangGraph, Vector Databases, Semantic Search, Prompt Optimization, and Full Stack Architecture.
 - 📫 **Contact**: [faizkhatri1819@gmail.com](mailto:faizkhatri1819@gmail.com)
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Featured & Selected Projects
 
 | Project | Description | Tech Stack | Live Demo | Repository |
 | :--- | :--- | :--- | :---: | :---: |
+| **AgentShield** | AI-powered payment security and guardrails architecture for PayPal AI agents, preventing prompt injections and unauthorized transactions. | `Python` `LangGraph` `AI Security` `PayPal API` `FastAPI` | [Inquire ↗](https://faizxcode.netlify.app/#contact) | [GitHub ↗](https://github.com/faizkhatri196) |
 | **LinkedIn Profile JSON Fetcher** | Automated profile data extraction engine and REST API that fetches and parses public LinkedIn profiles into clean, structured JSON format in real-time. | `REST API` `JSON Parser` `React` `Node.js` `Express` | [Live Demo ↗](https://linkdin-profile-json-fatch.onrender.com/) | [GitHub ↗](https://github.com/faizkhatri196/Linkdin-Profile-JSON-fatch.git) |
 | **AI Career Intelligence System** | Advanced career guidance platform leveraging LLMs, RAG pipelines, and LangChain to provide personalized professional insights and roadmap synthesis. | `Advanced RAG` `LLMs` `LangChain` `Python` `Next.js` | [Live Demo ↗](https://ai-carrer-inteligence-4wrx3982x-faiz-khatri.vercel.app/) | [GitHub ↗](https://github.com/faizkhatri196/AI-CARRER-INTELIGENCE.git) |
 | **AI Copilot Interview Platform** | AI-powered interview copilot model helping students master technical interviews with real-time feedback and structured evaluations. | `LLM Integration` `Node.js` `MongoDB` `React` | [Live Demo ↗](https://ai-copilot-interview-model.netlify.app/) | [GitHub ↗](https://github.com/faizkhatri196/Ai-copilot-interview-model) |
@@ -36,39 +37,38 @@ I specialize in designing autonomous agentic workflows, production-ready Advance
 
 ---
 
-## 🛠️ Skill Matrix
+## 🛠️ Technical Matrix
 
-### 🧠 AI & LLM Engineering
+### 🧠 AI & Agentic Systems
 - **Agentic AI**: Multi-step agent loops, LangGraph state graphs, dynamic tool calling, memory management.
+- **AI Security & Guardrails**: Adversarial prompt protection, payment transaction guardrails for PayPal AI agents.
 - **RAG Architectures**: Query rewriting, hybrid dense/sparse retrieval, reranking, metadata filtering, contextual compression.
 - **Cloud AI & Models**: AWS Bedrock, Claude, GPT-4, Llama 3, OpenAI APIs, Hugging Face.
 - **Frameworks**: LangChain, LangGraph, LlamaIndex, ChromaDB, Pinecone.
 
-### 💻 Programming & Core
-- **Languages**: Python, JavaScript (ES6+), TypeScript, C++, Java, C, SQL.
-- **Core Concepts**: Data Structures & Algorithms, Object-Oriented Design, System Design Fundamentals.
-
-### 🌐 Full Stack & Backend
+### 💻 Full Stack & Backend
 - **Backend**: Node.js, Express.js, Python (FastAPI / Flask), RESTful APIs, WebSocket.
 - **Databases**: MongoDB Atlas, PostgreSQL, SQLite, Vector Databases.
-- **Frontend**: React.js, Next.js, HTML5, CSS3, Tailwind CSS, JavaScript.
+- **Frontend**: React.js, Next.js, HTML5, CSS3, Tailwind CSS, JavaScript, Three.js / WebGL.
 
-### ☁️ DevOps & Tools
+### ⚙️ Programming & Infrastructure
+- **Languages**: Python, JavaScript (ES6+), TypeScript, C++, Java, SQL.
 - **Platforms**: AWS Cloud, Vercel, Render, Netlify.
 - **Tools**: Git, GitHub, VS Code, Postman, Linux / Bash.
 
 ---
 
-## 🌟 Portfolio Website Features
+## 🌟 Portfolio Experience Architecture
 
-- 🌐 **Full Multi-Language (i18n)**: Seamless translation across **English (EN)**, **Hindi (HI)**, **Japanese (JA)**, and **Spanish (ES)** with local storage persistence.
-- 📺 **Smooth CRT Aesthetic**: Hardware-accelerated cybernetic CRT scanline overlay with subtle bloom and vignette.
-- 🎯 **Smooth Physics Cursor**: Custom lerp-interpolated cursor with 60/120 FPS GPU acceleration on desktop, with automatic clean touch fallback on mobile devices.
-- ⚡ **Zero-Dependency Core**: Pure Vanilla JavaScript and CSS design system for ultra-fast load times.
+- 🌐 **Full Multi-Language (i18n)**: Instant live translation across **English (EN)**, **Hindi (HI)**, **Japanese (JA)**, and **Spanish (ES)** with persistent selection.
+- 🧊 **Interactive 3D WebGL Scene**: Three.js neural lattice and quantum geometric core with cursor-reactive spring physics, throttled for mobile and battery optimization.
+- ⚡ **Cinematic Preloader & Motion**: Awwwards-grade initial loading sequence with animated numerical counter and seamless curtain reveal.
+- 🎯 **Smooth Physics Cursor & Magnetic Controls**: Hardware-accelerated cursor lerp with reactive target expansion and magnetic pull on buttons.
+- 📱 **Full Breakpoint Responsiveness**: Pixel-perfect engineering across 320px, 375px, 430px, 768px, 1024px, 1366px, and 1920px.
 
 ---
 
-## 📬 Connect With Me
+## 📬 Connect
 
 - **Email**: [faizkhatri1819@gmail.com](mailto:faizkhatri1819@gmail.com)
 - **LinkedIn**: [linkedin.com/in/faiz-khatri-1912ab344](https://www.linkedin.com/in/faiz-khatri-1912ab344)

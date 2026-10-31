@@ -7,19 +7,16 @@
   let currentLang = localStorage.getItem('pref-lang') || 'en';
   let translations = {};
 
-  // Typewriter word updates hook
   let typewriterWordsUpdateCallback = null;
 
   window.onTypewriterWordsUpdate = function(callback) {
     typewriterWordsUpdateCallback = callback;
-    // Trigger immediately if translations are already present
     const heroWords = resolvePath(translations, 'hero.typewriter');
     if (heroWords && typewriterWordsUpdateCallback) {
       typewriterWordsUpdateCallback(heroWords);
     }
   };
 
-  // Retrieve pre-loaded translations from window scope
   function getTranslations(lang) {
     const dictionary = window['locale_' + lang];
     if (dictionary) return dictionary;
@@ -27,15 +24,13 @@
     return window.locale_en || {};
   }
 
-  // Deep resolve JSON path (e.g. "hero.statement")
   function resolvePath(obj, path) {
     if (!obj || !path) return null;
-    return path.split('.').reduce((prev, curr) => prev ? prev[curr] : null, obj);
+    return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
   }
 
-  // Update DOM elements with translations
   function updateDOM() {
-    // Translate standard elements
+    // Translate innerHTML elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const text = resolvePath(translations, key);
@@ -53,6 +48,15 @@
       }
     });
 
+    // Translate aria-labels
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      const text = resolvePath(translations, key);
+      if (text !== undefined && text !== null) {
+        el.setAttribute('aria-label', text);
+      }
+    });
+
     // Update document language tag
     document.documentElement.lang = currentLang;
 
@@ -66,8 +70,10 @@
     document.querySelectorAll('.lang-item').forEach(opt => {
       if (opt.dataset.lang === currentLang) {
         opt.classList.add('active');
+        opt.setAttribute('aria-selected', 'true');
       } else {
         opt.classList.remove('active');
+        opt.setAttribute('aria-selected', 'false');
       }
     });
 
@@ -75,9 +81,11 @@
     if (activeLangDisplay) {
       activeLangDisplay.textContent = currentLang.toUpperCase();
     }
+
+    // Dispatch global event for other components if needed
+    window.dispatchEvent(new CustomEvent('portfolio:localeChanged', { detail: { lang: currentLang } }));
   }
 
-  // Switch language
   function switchLanguage(lang) {
     if (!SUPPORTED_LANGUAGES.includes(lang)) return;
     currentLang = lang;
@@ -86,7 +94,6 @@
     updateDOM();
   }
 
-  // Initialize localization
   function initLocaleSystem() {
     translations = getTranslations(currentLang);
     updateDOM();
@@ -98,12 +105,14 @@
     if (langBtn && langMenu) {
       langBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        langMenu.classList.toggle('open');
+        const isOpen = langMenu.classList.toggle('open');
+        langBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
 
       document.addEventListener('click', (e) => {
         if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
           langMenu.classList.remove('open');
+          langBtn.setAttribute('aria-expanded', 'false');
         }
       });
 
@@ -115,9 +124,22 @@
             switchLanguage(selectedLang);
           }
           langMenu.classList.remove('open');
+          langBtn.setAttribute('aria-expanded', 'false');
         });
       });
     }
+
+    // Wire up mobile drawer language buttons if present
+    document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selectedLang = btn.dataset.lang;
+        if (selectedLang) {
+          switchLanguage(selectedLang);
+          document.querySelectorAll('.mobile-lang-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    });
   }
 
   if (document.readyState === 'loading') {
@@ -126,7 +148,6 @@
     initLocaleSystem();
   }
 
-  // Global helpers
   window.translate = function(key) {
     return resolvePath(translations, key) || key;
   };
