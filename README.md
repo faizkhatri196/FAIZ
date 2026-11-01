@@ -1,6 +1,7 @@
 # Faiz Khatri — Software Engineer & AI Systems Architect
 
 [![Portfolio](https://img.shields.io/badge/Live_Portfolio-faizxcode.netlify.app-e8b931?style=for-the-badge&logo=netlify&logoColor=black)](https://faizxcode.netlify.app/)
+[![Resume](https://img.shields.io/badge/Curriculum_Vitae-Download_PDF-ccff00?style=for-the-badge&logo=adobeacrobatreader&logoColor=black)](resume.pdf)
 [![GitHub](https://img.shields.io/badge/GitHub-faizkhatri196-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/faizkhatri196)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Faiz_Khatri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/faiz-khatri-1912ab344)
 [![LeetCode](https://img.shields.io/badge/LeetCode-faizkhatri196-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/faizkhatri196/)
@@ -69,6 +70,7 @@ I specialize in designing autonomous agentic workflows, production-ready Advance
 
 ## 📬 Connect
 
+- **Curriculum Vitae**: [Download Official Resume (PDF)](resume.pdf)
 - **Email**: [faizkhatri1819@gmail.com](mailto:faizkhatri1819@gmail.com)
 - **LinkedIn**: [linkedin.com/in/faiz-khatri-1912ab344](https://www.linkedin.com/in/faiz-khatri-1912ab344)
 - **GitHub**: [github.com/faizkhatri196](https://github.com/faizkhatri196)
