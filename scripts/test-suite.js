@@ -136,7 +136,11 @@ console.log('\n7. Testing Contact Console & Resume Asset...');
 assert(html.includes('id="contactForm"'), 'Functional contact form present');
 assert(html.includes('id="copyEmailBtn"'), 'Copy email to clipboard button present');
 assert(html.includes('id="copyToast"'), 'Copy email toast element present');
-assert(fs.existsSync(path.resolve(__dirname, '../resume.pdf')), 'resume.pdf exists and is accessible');
+const resumePath = path.resolve(__dirname, '../resume.pdf');
+assert(fs.existsSync(resumePath), 'resume.pdf exists and is accessible');
+const resumeBuffer = fs.readFileSync(resumePath);
+assert(resumeBuffer.slice(0, 5).toString('ascii') === '%PDF-', 'resume.pdf has valid PDF magic header (%PDF-)');
+assert(resumeBuffer.length > 50000, `resume.pdf size is valid (${(resumeBuffer.length / 1024).toFixed(1)} KB > 50 KB)`);
 
 console.log('\n====================================================');
 console.log(`   TEST RESULTS: ${passedTests}/${totalTests} PASSED`);
