@@ -34,6 +34,8 @@ requiredFiles.forEach(file => {
     if (stats.size === 0) {
       console.error(`[BUILD ERROR] File is empty: ${file}`);
       hasErrors = true;
+    } else if (file === 'resume.pdf') {
+      console.log(`[BUILD ASSET] Verified resume.pdf: ${(stats.size / 1024).toFixed(1)} KB`);
     }
   }
 });
